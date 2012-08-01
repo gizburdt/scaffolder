@@ -15,9 +15,9 @@
 	</div>
 	<!-- END #footer_wrap -->
 
-	<div style="display: none">
-		<?php wp_footer(); ?>
-	</div>
+	<!-- BEGIN wp_footer -->
+	<?php wp_footer(); ?>
+	<!-- END wp_footer -->
 
 </body>
 </html>
