@@ -103,6 +103,9 @@
 	// Widgets / Sidebars
 	add_action( 'widgets_init', 'register_extra_sidebars' );
 	add_action( 'widgets_init', 'register_widgets' );
+	
+	// Menus
+	add_action( 'init', 'register_menus' );
 
 
 /*==================================================*/
@@ -181,7 +184,7 @@
 	// Register admin styles
 	function register_admin_styles()
 	{
-		wp_register_style( 'admin-style', get_template_directory() . '/assets/css/admin.css', '', '', 'screen' );
+		wp_register_style( 'admin-style', get_template_directory_uri() . '/assets/css/admin.css', '', '', 'screen' );
 	}
 	
 	// Enqueue / Print admin styles
@@ -239,6 +242,22 @@
 		remove_menu_page('link-manager.php');
 	}
 	
+	
+/*==================================================*/
+/*  Menu
+/*==================================================*/
+	
+	function register_menus()
+	{
+		register_nav_menus(
+			array(
+				'main_menu'		=> __( 'Main Menu', SCAFFOLD_TEXTDOMAIN ),
+				//'top_menu'		=> __( 'Top Menu', SCAFFOLD_TEXTDOMAIN ),
+				//'footer_menu'	=> __( 'Footer Menu', SCAFFOLD_TEXTDOMAIN )
+			)
+		);
+	}
+	
 
 /*==================================================*/
 /* Excerpt
@@ -261,19 +280,17 @@
 	
 	function register_extra_sidebars()
 	{
-		/*
-		register_sidebar( array(
+		/*register_sidebar( array(
 			'name' 			=> 'sidebar',
 			'id'			=> 'sidebar',
 			'description'	=> __( 'Just a sidebar', SCAFFOLD_TEXTDOMAIN ),
-		) );
-		*/
+		) );*/
 	}
 	
 	// Register widgets
 	function register_widgets()
 	{
-		register_widget('Widget');
+		register_widget( 'Widget' );
 	}
 	
 	
