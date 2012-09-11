@@ -13,8 +13,8 @@
 	include( 'includes/walkers/menu_walker.php' );
 	include( 'includes/walkers/comment_walker.php' );
 	
+	include( 'includes/functions/content_types.php' );
 	include( 'includes/functions/breadcrumbs.php' );
-	include( 'includes/functions/meta_boxes.php' );
 	include( 'includes/functions/pagination.php' );
 	include( 'includes/functions/shortcodes.php' );
 	
