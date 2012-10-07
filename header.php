@@ -28,9 +28,9 @@
 				
 					wp_nav_menu( array(
 						'theme_location'	=> 'main_menu',
-						'container_class'	=> 'main_menu',
-						'container_id'		=> 'main_menu',
-						'items_wrap'      	=> '<ul id="%1$s" class="%2$s">%3$s</ul>',
+						'container_class'	=> 'main_menu_container menu_container',
+						'container_id'		=> 'main_menu_container',
+						'items_wrap'      	=> '<ul id="%1$s" class="%2$s cleared">%3$s</ul>',
 						'depth'           	=> 0,
 						'walker'         	=> ''
 					) ); 

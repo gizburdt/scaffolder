@@ -7,6 +7,73 @@ Author URI: [your-uri]
 Version: 1.0
 */
 
+/*==================================================*/
+/* Base
+/*==================================================*/
+	
+	/* Sticky footer */
+	html, body, #wrapper { height: 100%; margin: 0; padding: 0; }
+	body > #wrapper { height: auto; min-height: 100%; }
 
+	#wrapper{ }
+	#push{ padding-bottom: 150px; }
+	#footer_wrap{ position: relative; margin-top: -150px; height: 150px; clear: both; }
+
+	/* Clears */
+	.clear{ clear: both; }
+	.cleared:after{ content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+
+
+/*==================================================*/
+/* Structure
+/*==================================================*/
+	
+	#header_wrap, #content_wrap, #footer_wrap{ position: relative; width: 100%; }
+	#header, #content, #footer{ position: relative; width: 978px; margin: 0 auto; }
+
+	#header_wrap{}
+	#header{}
+	#content_wrap{}
+	#content{}
+	#sidebar_wrap{}
+	#sidebar{}
+	#footer_wrap{}
+	#footer{}
+
+
+/*==================================================*/
+/* Header
+/*==================================================*/
+	
+	#header .logo{ display: block; width: 200px; height: 60px; margin: 10px 0; background: #eee; }
+	
+	#header .menu{ background: #eee; }
+	#header .menu{ margin: 0; padding: 0; list-style: none; }
+	#header .menu li{ float: left; }
+	#header .menu li a{ padding: 0 10px; height: 50px; line-height: 50px; }
+
+
+/*==================================================*/
+/* Responsive
+/*==================================================*/
+
+	@media screen and (max-width: 640px) {
+
+		#header, #content, #footer{ width: auto; padding: 0 20px; }
+		#header .menu{ background: #bbb; }
+
+	}
+
+	@media screen and (min-width: 640px) and (max-width: 800px) {
+
+		#header, #content, #footer{ width: auto; padding: 0 20px; }
+		
+	}
+
+	@media screen and (min-width: 800px) {
+
+		
+		
+	}
 
 /* AAAAND IT'S GONE */
