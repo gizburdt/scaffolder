@@ -23,22 +23,41 @@ Version: 1.0
 	.clear{ clear: both; }
 	.cleared:after{ content: "."; display: block; height: 0; clear: both; visibility: hidden; }
 
+	/* Headers */
+	h1, h2, h3, h4, h5, h6{ margin-top: 0; }
+	h1{}
+	h2{}
+	h3{}
+	h4{}
+	h5{}
+	h6{}
+
+	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a{}
+
 
 /*==================================================*/
 /* Structure
 /*==================================================*/
 	
-	#header_wrap, #content_wrap, #footer_wrap{ position: relative; width: 100%; }
-	#header, #content, #footer{ position: relative; width: 978px; margin: 0 auto; }
+	#header_wrap, #footer_wrap{ position: relative; width: 100%; }
+	#header, #content_wrap, #footer{ position: relative; width: 978px; margin: 0 auto; }
 
 	#header_wrap{}
 	#header{}
 	#content_wrap{}
-	#content{}
-	#sidebar_wrap{}
+	#content{ width: 67%; float: left; }
+	#sidebar_wrap{ width: 30%; float: right; }
 	#sidebar{}
 	#footer_wrap{}
 	#footer{}
+
+	/* Sidebar */
+	body.sidebar_left #content{ float: right; }
+	body.sidebar_left #sidebar_wrap{ float: left; }
+	body.sidebar_right #content{ float: left; }
+	body.sidebar_right #sidebar_wrap{ float: right; }
+	body.sidebar_none #content{ width: 100%; }
+	body.sidebar_none #sidebar_wrap{ display: none; }
 
 
 /*==================================================*/
@@ -59,7 +78,7 @@ Version: 1.0
 
 	@media screen and (max-width: 640px) {
 
-		#header, #content, #footer{ width: auto; padding: 0 20px; }
+		#header, #content_wrap, #footer{ width: auto; padding: 0 20px; }
 		#header .menu{ background: #bbb; }
 
 	}

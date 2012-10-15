@@ -14,7 +14,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class( get_theme_mod('scaffold_sidebar') ); ?>>
 	
 	<!-- BEGIN #wrapper -->
 	<div id="wrapper">
