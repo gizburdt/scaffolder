@@ -36,7 +36,7 @@
 					) ); 
 					
 					// OR
-					// get_search_form();
+					// get_search_form(); 
 					
 				?>
 				
