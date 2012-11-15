@@ -56,14 +56,14 @@
 		add_filter( 'body_class','post_categories_body_class' );
 		
 		// Styles
-		add_action( 'init', 'deregister_styles' );
-		add_action( 'init', 'register_styles' );
+		add_action( 'wp_enqueue_scripts', 'deregister_styles' );
+		add_action( 'wp_enqueue_scripts', 'register_styles' );
 		add_action( 'wp_enqueue_scripts', 'enqueue_styles' );
 		add_action( 'wp_head', 'add_specific_styles' );
 		
 		// Scripts
-		add_action( 'init', 'deregister_scripts' );
-		add_action( 'init', 'register_scripts' );
+		add_action( 'wp_enqueue_scripts', 'deregister_scripts' );
+		add_action( 'wp_enqueue_scripts', 'register_scripts' );
 		add_action( 'wp_enqueue_scripts', 'enqueue_scripts' );
 		
 		// Login styles
@@ -319,11 +319,11 @@
 	function remove_dashboard_widgets() 
 	{
 		// Core
+		//remove_meta_box( 'dashboard_right_now', 'dashboard', 'core' );
+		//remove_meta_box( 'dashboard_quick_press', 'dashboard', 'core' );
 		remove_meta_box( 'dashboard_recent_comments', 'dashboard', 'core' );
 		remove_meta_box( 'dashboard_incoming_links', 'dashboard', 'core' );
 		remove_meta_box( 'dashboard_plugins', 'dashboard', 'core' );
-		remove_meta_box( 'dashboard_quick_press', 'dashboard', 'core' );
-		remove_meta_box( 'dashboard_right_now', 'dashboard', 'core' );
 		remove_meta_box( 'dashboard_recent_drafts', 'dashboard', 'core' );
 		remove_meta_box( 'dashboard_primary', 'dashboard', 'core' );
 		remove_meta_box( 'dashboard_secondary', 'dashboard', 'core' );
