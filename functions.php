@@ -72,6 +72,9 @@
 		// Excerpt
 		add_filter( 'excerpt_length', 'excerpt_length' );
 		add_filter( 'excerpt_more', 'excerpt_more' );
+
+		// Menu
+		add_filter( 'wp_nav_menu_objects', 'add_extra_menu_classes' );
 	}
 	else
 	{
@@ -264,6 +267,14 @@
 				//'footer_menu'	=> __( 'Footer Menu', SCAFFOLD_TEXTDOMAIN )
 			)
 		);
+	}
+
+	function add_extra_menu_classes( $objects ) 
+	{
+	    $objects[1]->classes[] = 'first';
+	    $objects[count( $objects )]->classes[] = 'last';
+
+	    return $objects;
 	}
 	
 
