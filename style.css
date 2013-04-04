@@ -39,37 +39,24 @@ Version: 1.0
 /* Structure
 /*==================================================*/
 	
-	#header_wrap, #footer_wrap{ position: relative; width: 100%; }
-	#header, #content_wrap, #footer{ position: relative; width: 978px; margin: 0 auto; }
-
-	#header_wrap{}
-	#header{}
-	#content_wrap{}
-	#content{ width: 67%; float: left; }
-	#sidebar_wrap{ width: 30%; float: right; }
-	#sidebar{}
-	#footer_wrap{}
-	#footer{}
-
-	/* Sidebar */
-	body.sidebar_left #content{ float: right; }
-	body.sidebar_left #sidebar_wrap{ float: left; }
-	body.sidebar_right #content{ float: left; }
-	body.sidebar_right #sidebar_wrap{ float: right; }
-	body.sidebar_none #content{ width: 100%; }
-	body.sidebar_none #sidebar_wrap{ display: none; }
-
+	
 
 /*==================================================*/
 /* Header
 /*==================================================*/
-	
-	#header .logo{ display: block; width: 200px; height: 60px; margin: 10px 0; background: #eee; }
-	
-	#header .menu{ background: #eee; }
-	#header .menu{ margin: 0; padding: 0; list-style: none; }
-	#header .menu li{ float: left; }
-	#header .menu li a{ padding: 0 10px; height: 50px; line-height: 50px; }
+
+
+
+/*==================================================*/
+/* Footer
+/*==================================================*/
+
+
+
+/*==================================================*/
+/* Content
+/*==================================================*/
+
 
 
 /*==================================================*/
@@ -77,22 +64,12 @@ Version: 1.0
 /*==================================================*/
 
 	@media screen and (max-width: 640px) {
-
-		#header, #content_wrap, #footer{ width: auto; padding: 0 20px; }
-		#header .menu{ background: #bbb; }
-
 	}
 
 	@media screen and (min-width: 640px) and (max-width: 800px) {
-
-		#header, #content, #footer{ width: auto; padding: 0 20px; }
-		
 	}
 
 	@media screen and (min-width: 800px) {
-
-		
-		
 	}
 
 /* AAAAND IT'S GONE */
