@@ -2,7 +2,7 @@
 
 	<div id="content_wrap">
 		
-		<!-- BEGIN #content -->
+		<!-- #content -->
 		<div id="content">
 			
 			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
@@ -14,7 +14,7 @@
 			<?php endwhile; endif; ?>
 			
 		</div>
-		<!-- END #content -->
+		<!-- /content -->
 		
 		<?php get_sidebar(); ?>
 		

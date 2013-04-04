@@ -17,11 +17,9 @@ class Widget extends WP_Widget {
 
 		echo $before_widget;
 		if ( ! empty( $title ) ) echo $before_title . $title . $after_title;
-		?>
-		
-			
-		
-		<?php
+
+			// Widget content
+
 		echo $after_widget;
 	}
 
@@ -33,8 +31,7 @@ class Widget extends WP_Widget {
 	}
 
 	public function form( $instance ) {
-		$title = isset( $instance[ 'title' ] ) ? $instance[ 'title' ] : __( 'New title', 'text_domain' );
-		?>
+		$title = isset( $instance[ 'title' ] ) ? $instance[ 'title' ] : __( 'New title', 'text_domain' ); ?>
 		
 		<p>
 			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
