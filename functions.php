@@ -225,6 +225,9 @@
 		wp_enqueue_script( 'jquery-masonry' );
 		wp_enqueue_script( 'jquery-caroufredsel' );
 		wp_enqueue_script( 'functions' );
+
+		if ( is_singular() && get_option( 'thread_comments' ) ) 
+			wp_enqueue_script( 'comment-reply' );
 	}
 	
 	function register_admin_scripts()

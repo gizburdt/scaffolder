@@ -7,7 +7,6 @@
 
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-	<?php if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
 	
 	<title><?php wp_title( '|', true, 'right' ); ?> <?php if( ! defined( 'WPSEO_VERSION' ) ) bloginfo( 'name' ); ?></title>
 	
