@@ -1,8 +1,9 @@
-<div id="comments">
+<!-- .comments -->
+<div class="comments">
 	
 	<?php if( post_password_required() ) : ?>
 			<p class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments.', 'scaffold' ); ?></p>
-		</div><!-- END #comments -->
+		</div><!-- /comments -->
 	<?php return; endif; ?>
 
 	<?php if( have_comments() ) : ?>
@@ -44,4 +45,5 @@
 	
 	<div class="clear"></div>
 
-</div><!-- END #comments -->
+</div>
+<!-- /comments -->

@@ -1,9 +1,9 @@
 		<div id="push"></div>
 	
 	</div>
-	<!-- END #wrapper -->
+	<!-- /wrapper -->
 	
-	<!-- BEGIN #footer_wrap -->
+	<!-- #footer_wrap -->
 	<div id="footer_wrap">
 	
 		<div id="footer">
@@ -13,11 +13,11 @@
 		</div>
 	
 	</div>
-	<!-- END #footer_wrap -->
+	<!-- /footer_wrap -->
 
-	<!-- BEGIN wp_footer -->
+	<!-- wp_footer -->
 	<?php wp_footer(); ?>
-	<!-- END wp_footer -->
+	<!-- /wp_footer -->
 
 </body>
 </html>
