@@ -1,5 +1,7 @@
 jQuery.noConflict();
-jQuery(document).ready(function($){
+( function( $ ) {
+
+	console.log('dsafasdfasdf');
 	
 	$('.tabs').tabs();
 	
@@ -13,4 +15,4 @@ jQuery(document).ready(function($){
 		return $(this).attr('title');
 	});
 	
-});
+} )( jQuery );
