@@ -43,8 +43,8 @@
 	{
 		// Headers, footers, body
 		add_filter( 'the_generator', 'remove_wp_version' );
-		add_filter( 'body_class','browser_body_class' );
-		add_filter( 'body_class','post_categories_body_class' );
+		add_filter( 'body_class', 'browser_body_class' );
+		add_filter( 'body_class', 'post_categories_body_class' );
 		
 		// Styles
 		add_action( 'wp_enqueue_scripts', 'deregister_styles' );
