@@ -10,8 +10,6 @@
 
 	if( ACTIVATE_SCAFFOLD )
 	{
-		include( 'includes/customizer.php' );
-
 		$scaffold = new Scaffold();
 	}
 
@@ -25,14 +23,13 @@
 		function __construct()
 		{
 			add_action( 'after_setup_theme', array( &$this, 'after_theme_setup' ) );
-
 			add_action( 'admin_menu', array( &$this, 'admin_menu' ) );
 			add_action( 'customize_register', array( &$this, 'customize_register' ) );			
 		}
 
 		function after_theme_setup()
 		{
-			set_theme_mod( 'scaffold_sidebar', 'sidebar_right' );
+			
 		}
 
 		function admin_menu()
