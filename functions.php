@@ -24,11 +24,11 @@
 		add_theme_support( 'post-formats', array( 'aside', 'link', 'gallery', 'status', 'quote', 'image' ) );
 
 		// Image sizes
-		/* set_post_thumbnail_size( 'width', 'height', 'crop' );
+		// set_post_thumbnail_size( 'width', 'height', 'crop' );
 	
-		add_image_size( 'name', width, height, true );
-		add_image_size( 'name', width, height, true );
-		add_image_size( 'name', width, height, true ); */
+		// add_image_size( 'name', width, height, true );
+		// add_image_size( 'name', width, height, true );
+		// add_image_size( 'name', width, height, true );
 
 		// Editor
 		add_editor_style( 'assets/css/editor-style.css' );
@@ -98,6 +98,10 @@
 	
 	// Menus
 	add_action( 'init', 'register_menus' );
+
+	// Mail
+	add_filter( 'wp_mail_from', 'new_mail_from' );
+	add_filter( 'wp_mail_from_name', 'new_mail_from_name' );
 
 
 /*==================================================*/
@@ -364,6 +368,23 @@
 		unset( $methods['yim'] );
 		
 		return $methods;
+	}
+
+/*==================================================*/
+/* Mail
+/*==================================================*/
+
+	function new_mail_from( $from ) 
+	{
+	    $from = get_bloginfo( 'name' );
+	 
+	    return $from;
+	}
+
+	function new_mail_from_name( $email ) {
+	    $email = get_bloginfo( 'admin_email' );
+	 
+	    return $email;
 	}
 
 
