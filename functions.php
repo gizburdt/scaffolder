@@ -89,6 +89,9 @@
 		
 		// User
 		add_filter( 'user_contactmethods', 'edit_contactmethods' );
+
+		// Misc
+		add_filter( 'mce_buttons', 'enable_more_buttons' );
 	}
 	
 	// Widgets / Sidebars
@@ -385,6 +388,17 @@
 	    $email = get_bloginfo( 'admin_email' );
 	 
 	    return $email;
+	}
+
+/*==================================================*/
+/* Misc
+/*==================================================*/
+
+	function enable_more_buttons( $buttons ) 
+	{
+		$buttons[] = 'hr';
+
+		return $buttons;
 	}
 
 
