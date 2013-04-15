@@ -19,7 +19,7 @@
 	<!-- BEGIN #wrapper -->
 	<div id="wrapper">
 		
-		<div id="header_wrap">
+		<div id="header-wrap">
 			<div id="header">
 				
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo"></a>
@@ -28,8 +28,8 @@
 				
 					wp_nav_menu( array(
 						'theme_location'	=> 'main_menu',
-						'container_class'	=> 'main_menu_container menu_container',
-						'container_id'		=> 'main_menu_container',
+						'container_class'	=> 'main-menu-container menu-container',
+						'container_id'		=> 'main-menu-container',
 						'items_wrap'      	=> '<ul id="%1$s" class="%2$s cleared">%3$s</ul>',
 						'depth'           	=> 0,
 						'walker'         	=> ''

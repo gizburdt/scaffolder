@@ -1,5 +1,5 @@
 <!-- BEGIN #sidebar_wrap -->
-<div id="sidebar_wrap">
+<div id="sidebar-wrap">
 	
 	<div id="sidebar">
 		

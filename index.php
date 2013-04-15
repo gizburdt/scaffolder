@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-	<div id="content_wrap">
+	<div id="content-wrap">
 		
 		<!-- #content -->
 		<div id="content">
