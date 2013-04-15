@@ -40,5 +40,4 @@ The goal of Scaffold is to make the life of Wordpress developers easier. This is
 
 ## Changelog
 
-###0.1
-* First official release
+No active versions
