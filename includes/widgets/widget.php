@@ -7,7 +7,7 @@ class Widget extends WP_Widget {
 		parent::__construct(
 			'widget', // Base ID
 			'Widget', // Name
-			array( 'description' => __( 'Just a widget', SCAFFOLD_TEXTDOMAIN ), )
+			array( 'description' => __( 'Just a widget', 'scaffold' ), )
 		);
 	}
 

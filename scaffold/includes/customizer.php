@@ -13,7 +13,7 @@ class Scaffold_Customizer
 	{
 		// Layout
 		$customize->add_section( 'scaffold_layout', array(
-			'title'			=> __( 'Layout', SCAFFOLD_TEXTDOMAIN ),
+			'title'			=> __( 'Layout', 'scaffold' ),
 			'priority'		=> 130
 		) );
 	}
@@ -35,7 +35,7 @@ class Scaffold_Customizer
 		$customize->add_control( new WP_Customize_Image_Control( $customize, 'logo', array(
 			'section'		=> 'title_tagline',
 			'settings'		=> 'logo',
-			'label'			=> __( 'Logo', SCAFFOLD_TEXTDOMAIN ),
+			'label'			=> __( 'Logo', 'scaffold' ),
 			'priority'		=> 5
 		) ) );
 
@@ -43,12 +43,12 @@ class Scaffold_Customizer
 		$customize->add_control( 'scaffold_sidebar', array(
 			'section'		=> 'scaffold_layout',
 			'settings'		=> 'scaffold_sidebar',
-			'label'			=> __( 'Sidebar', SCAFFOLD_TEXTDOMAIN ),
+			'label'			=> __( 'Sidebar', 'scaffold' ),
 			'type'			=> 'radio',
 			'choices'		=> array(
-				'sidebar_right'		=> __( 'Sidebar Right', SCAFFOLD_TEXTDOMAIN ),
-				'sidebar_left'		=> __( 'Sidebar Left', SCAFFOLD_TEXTDOMAIN ),
-				'sidebar_none'		=> __( 'No Sidebar', SCAFFOLD_TEXTDOMAIN )
+				'sidebar_right'		=> __( 'Sidebar Right', 'scaffold' ),
+				'sidebar_left'		=> __( 'Sidebar Left', 'scaffold' ),
+				'sidebar_none'		=> __( 'No Sidebar', 'scaffold' )
 			)
 		) );
 	}
