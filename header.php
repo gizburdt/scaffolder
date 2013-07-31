@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
-	<meta name="viewport" content="width=device-width" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
@@ -27,9 +27,9 @@
 				<?php 
 				
 					wp_nav_menu( array(
-						'theme_location'	=> 'main_menu',
-						'container_class'	=> 'main-menu-container menu-container',
-						'container_id'		=> 'main-menu-container',
+						'theme_location'	=> 'primary',
+						'container_class'	=> 'primary-menu-container menu-container',
+						'container_id'		=> 'primary-menu-container',
 						'items_wrap'      	=> '<ul id="%1$s" class="%2$s cleared">%3$s</ul>',
 						'depth'           	=> 0,
 						'walker'         	=> ''

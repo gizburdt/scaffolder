@@ -1,0 +1,18 @@
+	
+	@media screen and (max-width: 480px) {
+
+		body{ background: red; }
+
+	}
+
+	@media screen and (min-width: 480px) and (max-width: 800px) {
+
+		body{ background: green; }
+
+	}
+
+	@media screen and (min-width: 800px) and (max-width: 960px) {
+
+		body{ background: gray; }
+
+	}

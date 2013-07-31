@@ -12,7 +12,6 @@
 	function scaffold_setup()
 	{
 		// Includes
-		include( 'scaffold/scaffold.php' );
 		include( 'includes/widgets/widget.php' );
 		include( 'includes/walkers/walker-menu.php' );
 		include( 'includes/walkers/walker-comment.php' );
@@ -24,17 +23,13 @@
 		add_theme_support( 'menus' );
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'automatic-feed-links' );
-		add_theme_support( 'post-formats', array( 'aside', 'link', 'gallery', 'status', 'quote', 'image' ) );
+		add_theme_support( 'post-formats', array( /* 'aside', 'link', 'gallery', 'status', 'quote', 'image' */ ) );
 
-		// Image sizes
-		// set_post_thumbnail_size( 'width', 'height', 'crop' );
-	
-		// add_image_size( 'name', width, height, true );
-		// add_image_size( 'name', width, height, true );
+		// Image sizes	
 		// add_image_size( 'name', width, height, true );
 
 		// Editor
-		add_editor_style( 'assets/css/editor-style.css' );
+		// add_editor_style( 'assets/css/editor-style.css' );
 	}
 
 	
@@ -45,69 +40,69 @@
 	if( ! is_admin() ) 
 	{
 		// Headers, footers, body
-		add_filter( 'the_generator', 'remove_wp_version' );
-		add_filter( 'body_class', 'browser_body_class' );
-		add_filter( 'body_class', 'post_categories_body_class' );
-		
+		add_filter( 'the_generator', 		'remove_wp_version' );
+		add_filter( 'body_class', 			'browser_body_class' );
+		add_filter( 'body_class', 			'post_categories_body_class' );
+		add_action( 'wp_head', 				'add_favicon' );
+
 		// Styles
-		add_action( 'wp_enqueue_scripts', 'deregister_styles' );
-		add_action( 'wp_enqueue_scripts', 'register_styles' );
-		add_action( 'wp_enqueue_scripts', 'enqueue_styles' );
-		add_action( 'wp_head', 'add_specific_styles' );
+		add_action( 'wp_enqueue_scripts', 	'deregister_styles' );
+		add_action( 'wp_enqueue_scripts', 	'register_styles' );
+		add_action( 'wp_enqueue_scripts', 	'enqueue_styles' );
+		add_action( 'wp_head', 				'add_specific_styles' );
+		// add_action( 'login_head', 		'register_login_styles' );
 		
 		// Scripts
-		add_action( 'wp_enqueue_scripts', 'deregister_scripts' );
-		add_action( 'wp_enqueue_scripts', 'register_scripts' );
-		add_action( 'wp_enqueue_scripts', 'enqueue_scripts' );
-		
-		// Login styles
-		add_action( 'login_head', 'register_login_styles' );
-
-		// Head
-		add_action( 'wp_head', 'add_favicon' );
+		add_action( 'wp_enqueue_scripts', 	'deregister_scripts' );
+		add_action( 'wp_enqueue_scripts', 	'register_scripts' );
+		add_action( 'wp_enqueue_scripts', 	'enqueue_scripts' );
 		
 		// Excerpt
-		add_filter( 'excerpt_length', 'excerpt_length' );
-		add_filter( 'excerpt_more', 'excerpt_more' );
+		add_filter( 'excerpt_length', 		'excerpt_length' );
+		add_filter( 'excerpt_more', 		'excerpt_more' );
 
 		// Menu
-		add_filter( 'wp_nav_menu_objects', 'add_extra_menu_classes' );
+		add_filter( 'wp_nav_menu_objects', 	'add_extra_menu_classes' );
+		add_filter( 'nav_menu_css_class', 	'fix_menu_class' );
+
+		// SEO
+		add_filter( 'wpseo_author_link', 	'no_author_on_pages' );
 	}
 	else
 	{
 		// Styles
-		add_action( 'admin_init', 'register_admin_styles' );
-		add_action( 'admin_print_styles', 'enqueue_admin_styles' );
+		// add_action( 'admin_init', 			'register_admin_styles' );
+		// add_action( 'admin_print_styles', 	'enqueue_admin_styles' );
 		
 		// Scripts
-		add_action( 'admin_init', 'register_admin_scripts' );
-		add_action( 'admin_enqueue_scripts', 'enqueue_admin_scripts' );
+		// add_action( 'admin_init', 			'register_admin_scripts' );
+		// add_action( 'admin_enqueue_scripts', 'enqueue_admin_scripts' );
 		
 		// Admin menu
-		add_action( 'admin_menu', 'remove_menu_pages' );
+		add_action( 'admin_menu', 			'remove_menu_pages' );
 		
 		// Dashboard widgets
-		add_action( 'wp_dashboard_setup', 'add_dashboard_widgets' );
-		add_action( 'admin_menu', 'remove_dashboard_widgets' );
+		add_action( 'wp_dashboard_setup', 	'remove_dashboard_widgets' );
+		add_action( 'wp_dashboard_setup', 	'add_dashboard_widgets' );
 		
 		// User
-		add_filter( 'user_contactmethods', 'edit_contactmethods' );
+		add_filter( 'user_contactmethods', 	'edit_contactmethods' );
 
 		// Misc
-		add_filter( 'mce_buttons', 'enable_more_buttons' );
+		add_filter( 'mce_buttons', 			'enable_more_buttons' );
 	}
 	
 	// Widgets / Sidebars
-	add_action( 'widgets_init', 'register_extra_sidebars' );
-	add_action( 'widgets_init', 'register_widgets' );
-	add_filter(' widget_text', 'do_shortcode' );
+	add_action( 'widgets_init', 		'register_extra_sidebars' );
+	add_action( 'widgets_init', 		'register_widgets' );
+	add_filter(' widget_text', 			'do_shortcode' );
 	
 	// Menus
-	add_action( 'init', 'register_menus' );
+	add_action( 'init', 				'register_menus' );
 
 	// Mail
-	add_filter( 'wp_mail_from', 'new_mail_from' );
-	add_filter( 'wp_mail_from_name', 'new_mail_from_name' );
+	add_filter( 'wp_mail_from', 		'new_mail_from' );
+	add_filter( 'wp_mail_from_name', 	'new_mail_from_name' );
 
 
 /*==================================================*/
@@ -129,7 +124,7 @@
 	    elseif( $is_safari )	$classes[] = 'safari';  
 	    elseif( $is_chrome )	$classes[] = 'chrome';  
 	    elseif( $is_IE )		$classes[] = 'ie';  
-	    else               		$classes[] = 'unknown';
+	    else               		$classes[] = 'unknown-browser';
 
 	    return $classes;  
 	}
@@ -137,13 +132,11 @@
 	// Post category name in body class
 	function post_categories_body_class( $classes ) 
 	{
-	    if( ! is_single() )
+	    if( is_single() )
 	    {
 	    	global $post;
 	        foreach( ( get_the_category( $post->ID ) ) as $category ) 
-			{  
-	            $classes[] = 'term-' . $category->category_nicename;  
-	        } 
+	            $classes[] = 'term-' . $category->category_nicename;
 	    }
 
 	    return $classes;
@@ -166,6 +159,7 @@
 		wp_register_style( 'normalize', get_template_directory_uri() . '/assets/css/normalize.css', '', '', 'screen' );
 		wp_register_style( 'fonts', get_template_directory_uri() . '/assets/css/fonts.css', '', '', 'screen' );
 		wp_register_style( 'style', get_template_directory_uri() . '/style.css', '', '', 'screen' );
+		wp_register_style( 'responsive', get_template_directory_uri() . '/assets/css/responsive.css', '', '', 'screen' );
 	}
 	
 	// Deregister styles
@@ -180,12 +174,13 @@
 		wp_enqueue_style( 'normalize' );
 		wp_enqueue_style( 'fonts' );
 		wp_enqueue_style( 'style' );
+		wp_enqueue_style( 'responsive' );
 	}
 	
 	// Login screen styles
 	function register_login_styles()
 	{
-		echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo( 'template_url' ) . '/assets/css/login.css">';
+		echo '<link rel="stylesheet" type="text/css" href="' . get_template_directory_uri() . '/assets/css/login.css">';
 	}
 	
 	// Register admin styles
@@ -197,13 +192,13 @@
 	// Enqueue / Print admin styles
 	function enqueue_admin_styles()
 	{
-		// wp_enqueue_style( 'admin-style' );
+		wp_enqueue_style( 'admin-style' );
 	}
 
 	// Add specific styles
 	function add_specific_styles()
 	{
-		echo '<!--[if IE]><link rel="stylesheet" id="ie-7-css" href="' . get_template_directory_uri() . '/css/ie.css" type="text/css" media="screen"><![endif]-->';
+		echo '<!--[if lt IE9]><link rel="stylesheet" id="ie-7-css" href="' . get_template_directory_uri() . '/css/ie.css" type="text/css" media="screen"><![endif]-->';
 	}
 
 
@@ -219,26 +214,36 @@
 	// Register scripts
 	function register_scripts() 
 	{
-		wp_register_script( 'html5', get_template_directory_uri() . '/assets/js/html5.min.js', '', '', true );
+		wp_register_script( 'modernizr', get_template_directory_uri() . '/assets/js/modernizr.min.js', '', '', true );
+		wp_register_script( 'respond', get_template_directory_uri() . '/assets/js/respond.min.js', '', '', true );
+		wp_register_script( 'enquire', get_template_directory_uri() . '/assets/js/enquire.min.js', '', '', true );
+		
+		wp_register_script( 'jquery-imagefit', get_template_directory_uri() . '/assets/js/jquery-imagefit.min.js', array( 'jquery' ), '', true );
 		wp_register_script( 'jquery-example', get_template_directory_uri() . '/assets/js/jquery.example.min.js', array( 'jquery' ), '', true);
-		wp_register_script( 'jquery-masonry', get_template_directory_uri() . '/assets/js/jquery.masonry.min.js', array( 'jquery' ), '', true);
 		wp_register_script( 'jquery-caroufredsel', get_template_directory_uri() . '/assets/js/jquery.caroufredsel.min.js', array( 'jquery' ), '', true);
-		wp_register_script( 'functions', get_template_directory_uri() . '/assets/js/functions.js', array( 'jquery', 'jquery-ui-core', 'jquery-example', 'jquery-masonry', 'jquery-caroufredsel' ), '', true);
+		
+		wp_register_script( 'functions', get_template_directory_uri() . '/assets/js/functions.js', array( 'jquery', 'jquery-ui-core', 'jquery-ui-tabs' ), '', true);
 	}
 	
 	// Enqueue scripts
 	function enqueue_scripts()
 	{
-		wp_enqueue_script( 'html5' );
-		wp_enqueue_script( 'jquery' );
-		wp_enqueue_script( 'jquery-ui-core' );
+		wp_enqueue_script( 'jquery', '/wp-includes/js/jquery/jquery.js', null, null, true );
+
+		wp_enqueue_script( 'modernizr' );
+		wp_enqueue_script( 'respond' );
+		wp_enqueue_script( 'enquire' );		
+
+		wp_enqueue_script( 'jquery-imagefit' );
 		wp_enqueue_script( 'jquery-example' );
-		wp_enqueue_script( 'jquery-masonry' );
 		wp_enqueue_script( 'jquery-caroufredsel' );
+		
 		wp_enqueue_script( 'functions' );
 
 		if ( is_singular() && get_option( 'thread_comments' ) ) 
 			wp_enqueue_script( 'comment-reply' );
+
+		localize_scripts();
 	}
 	
 	function register_admin_scripts()
@@ -248,12 +253,22 @@
 	
 	function enqueue_admin_scripts()
 	{
-		// wp_enqueue_script( 'admin-functions' );
+		wp_enqueue_script( 'admin-functions' );
+	}
+
+	// Localise scripts
+	function localize_scripts()
+	{
+		wp_localize_script( 'functions', 'Scaffold', array(
+			'template_uri'		=> get_template_directory_uri(),
+			'home_url'			=> get_home_url(),
+			'ajax_url'			=> admin_url( 'admin-ajax.php' )
+		) );
 	}
 
 	
 /*==================================================*/
-/* Admin Menu
+/* Admin
 /*==================================================*/
 	
 	// Remove unnecessary pages
@@ -262,6 +277,33 @@
 		remove_menu_page( 'link-manager.php' );
 	}
 
+	// Add new dasboard widgets
+	function add_dashboard_widgets() 
+	{
+		// wp_add_dashboard_widget( 'dashboard_widget', 'Dashboard Widget', 'dashboard_widget' );
+	}
+
+	function dashboard_widget() 
+	{
+		echo 'This is a dashboard widget';
+	}
+	
+	// Remove dashboard widgets
+	function remove_dashboard_widgets() 
+	{
+		// Core
+		remove_meta_box( 'dashboard_recent_comments', 'dashboard', 'core' );
+		remove_meta_box( 'dashboard_incoming_links', 'dashboard', 'core' );
+		remove_meta_box( 'dashboard_plugins', 'dashboard', 'core' );
+		remove_meta_box( 'dashboard_recent_drafts', 'dashboard', 'core' );
+		remove_meta_box( 'dashboard_primary', 'dashboard', 'core' );
+		remove_meta_box( 'dashboard_secondary', 'dashboard', 'core' );
+		// remove_meta_box( 'dashboard_right_now', 'dashboard', 'core' );
+		// remove_meta_box( 'dashboard_quick_press', 'dashboard', 'core' );
+		
+		// Yoast
+		remove_meta_box( 'yoast_db_widget', 'dashboard', 'normal' );
+	}
 	
 /*==================================================*/
 /*  Menu
@@ -272,7 +314,7 @@
 	{
 		register_nav_menus(
 			array(
-				'main-menu'			=> __( 'Main Menu', 'scaffold' ),
+				'primary'			=> __( 'Primary', 'scaffold' ),
 				// 'top-menu'		=> __( 'Top Menu', 'scaffold' ),
 				// 'footer-menu'	=> __( 'Footer Menu', 'scaffold' )
 			)
@@ -286,6 +328,35 @@
 	    $objects[count( $objects )]->classes[] = 'last';
 
 	    return $objects;
+	}
+
+	// Fix menu, so the page_for_posts page won't highlight on post type archive
+	function fix_menu_class( $classes = array(), $menu_item = false )
+	{
+		$post_types = get_post_types( array( '_builtin' => false ) );
+		$home 		= get_option( 'page_for_posts' );
+		
+		if ( is_singular( $post_types ) || is_post_type_archive( $post_types ) || is_author() || is_404() )
+		{
+			if( $home == $menu_item->object_id )
+			{
+				if( in_array( 'current_page_parent', $classes ) )
+					unset( $classes[array_search( 'current_page_parent', $classes )] );
+			}
+
+			if( is_singular() )
+			{
+				global $post;
+				$post_type = get_post_type( $post->ID );
+
+				if( in_array( 'archive_' . $post_type, $classes ) )
+				{
+					$classes[] = 'current_page_parent';
+				}
+			}
+		}
+
+		return $classes;
 	}
 
 
@@ -328,40 +399,6 @@
 		// register_widget( 'Widget' );
 	}
 
-	
-/*==================================================*/
-/* Dashboard widgets
-/*==================================================*/
-	
-	// Add new dasboard widgets
-	function add_dashboard_widgets() 
-	{
-		//wp_add_dashboard_widget( 'dashboard_widget', 'Dashboard Widget', 'dashboard_widget' );
-	}
-
-	function dashboard_widget() 
-	{
-		// echo '';
-	}
-	
-	// Remove dashboard widgets
-	function remove_dashboard_widgets() 
-	{
-		// Core
-		// remove_meta_box( 'dashboard_right_now', 'dashboard', 'core' );
-		// remove_meta_box( 'dashboard_quick_press', 'dashboard', 'core' );
-		remove_meta_box( 'dashboard_recent_comments', 'dashboard', 'core' );
-		remove_meta_box( 'dashboard_incoming_links', 'dashboard', 'core' );
-		remove_meta_box( 'dashboard_plugins', 'dashboard', 'core' );
-		remove_meta_box( 'dashboard_recent_drafts', 'dashboard', 'core' );
-		remove_meta_box( 'dashboard_primary', 'dashboard', 'core' );
-		remove_meta_box( 'dashboard_secondary', 'dashboard', 'core' );
-		
-		// Yoast
-		remove_meta_box( 'yoast_db_widget', 'dashboard', 'normal' );
-	}
-
-
 /*==================================================*/
 /* User
 /*==================================================*/
@@ -382,15 +419,15 @@
 
 	function new_mail_from( $from ) 
 	{
-	    $from = get_bloginfo( 'name' );
+	    $from = get_bloginfo( 'admin_email' );
 	 
 	    return $from;
 	}
 
-	function new_mail_from_name( $email ) {
-	    $email = get_bloginfo( 'admin_email' );
+	function new_mail_from_name( $name ) {
+	    $name = get_bloginfo( 'name' );
 	 
-	    return $email;
+	    return $name;
 	}
 
 /*==================================================*/
@@ -447,4 +484,15 @@
 				echo '<a href="' . get_pagenum_link($pages) . '">&raquo;</a>';
 	         echo '</div>';
 	     }
+	}
+
+/*==================================================*/
+/* SEO
+/*==================================================*/
+
+	function no_author_on_pages( $gplus )
+	{
+		if( ! is_singular('post') ) return '';
+
+		return $gplus;
 	}
