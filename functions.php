@@ -12,7 +12,10 @@
 	function scaffold_setup()
 	{
 		// Includes
+		include( 'includes/customize/customizer.php' );
+
 		include( 'includes/widgets/widget.php' );
+		
 		include( 'includes/walkers/walker-menu.php' );
 		include( 'includes/walkers/walker-comment.php' );
 
