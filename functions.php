@@ -221,7 +221,7 @@
 		wp_register_script( 'respond', get_template_directory_uri() . '/assets/js/respond.min.js', '', '', true );
 		wp_register_script( 'enquire', get_template_directory_uri() . '/assets/js/enquire.min.js', '', '', true );
 		
-		wp_register_script( 'jquery-imagefit', get_template_directory_uri() . '/assets/js/jquery-imagefit.min.js', array( 'jquery' ), '', true );
+		wp_register_script( 'jquery-fitvids', get_template_directory_uri() . '/assets/js/jquery.fitvids.min.js', array( 'jquery' ), '', true );
 		wp_register_script( 'jquery-example', get_template_directory_uri() . '/assets/js/jquery.example.min.js', array( 'jquery' ), '', true);
 		wp_register_script( 'jquery-caroufredsel', get_template_directory_uri() . '/assets/js/jquery.caroufredsel.min.js', array( 'jquery' ), '', true);
 		
@@ -237,7 +237,7 @@
 		wp_enqueue_script( 'respond' );
 		wp_enqueue_script( 'enquire' );		
 
-		wp_enqueue_script( 'jquery-imagefit' );
+		wp_enqueue_script( 'jquery-fitvids' );
 		wp_enqueue_script( 'jquery-example' );
 		wp_enqueue_script( 'jquery-caroufredsel' );
 		
