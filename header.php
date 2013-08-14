@@ -17,10 +17,10 @@
 <body <?php body_class( get_theme_mod('scaffold_sidebar') ); ?>>
 	
 	<!-- BEGIN #wrapper -->
-	<div id="wrapper">
+	<div class="wrapper">
 		
-		<div id="header-wrap">
-			<div id="header">
+		<div class="header-wrap">
+			<div class="header">
 				
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo"></a>
 				

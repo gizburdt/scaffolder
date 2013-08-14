@@ -1,12 +1,12 @@
-		<div id="push"></div>
+		<div class="push"></div>
 	
 	</div>
 	<!-- /wrapper -->
 	
 	<!-- #footer_wrap -->
-	<div id="footer-wrap">
+	<div class="footer-wrap">
 	
-		<div id="footer">
+		<div class="footer">
 		
 			&copy; Copyright
 		

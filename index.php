@@ -1,9 +1,9 @@
 <?php get_header(); ?>
 
-	<div id="content-wrap">
+	<div class="content-wrap">
 		
 		<!-- #content -->
-		<div id="content">
+		<div class="content">
 			
 			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 				

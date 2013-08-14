@@ -1,7 +1,7 @@
 <!-- BEGIN #sidebar_wrap -->
-<div id="sidebar-wrap">
+<div class="sidebar-wrap">
 	
-	<div id="sidebar">
+	<div class="sidebar">
 		
 		This is the sidebar
 		

@@ -12,12 +12,12 @@ Version: 0.1
 /*==================================================*/
 	
 	/* Sticky footer */
-	html, body, #wrapper { height: 100%; margin: 0; padding: 0; }
-	body > #wrapper { height: auto; min-height: 100%; }
+	html, body, .wrapper { height: 100%; margin: 0; padding: 0; }
+	body > .wrapper { height: auto; min-height: 100%; }
 
-	#wrapper{ }
-	#push{ padding-bottom: 150px; }
-	#footer-wrap{ position: relative; margin-top: -150px; height: 150px; clear: both; }
+	.wrapper{ }
+	.push{ padding-bottom: 150px; }
+	.footer-wrap{ position: relative; margin-top: -150px; height: 150px; clear: both; }
 
 	/* Clears */
 	.clear{ clear: both; }
