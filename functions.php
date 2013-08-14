@@ -420,11 +420,11 @@
 /* Mail
 /*==================================================*/
 
-	function new_mail_from( $from ) 
+	function new_mail_from( $email ) 
 	{
-	    $from = get_bloginfo( 'admin_email' );
+	    $email = get_bloginfo( 'admin_email' );
 	 
-	    return $from;
+	    return $email;
 	}
 
 	function new_mail_from_name( $name ) {
