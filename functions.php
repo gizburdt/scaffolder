@@ -160,9 +160,7 @@
 	function register_styles()
 	{
 		wp_register_style( 'bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css', '', '', 'screen' );
-		wp_register_style( 'fonts', get_template_directory_uri() . '/assets/css/fonts.css', '', '', 'screen' );
 		wp_register_style( 'style', get_template_directory_uri() . '/style.css', '', '', 'screen' );
-		wp_register_style( 'responsive', get_template_directory_uri() . '/assets/css/responsive.css', '', '', 'screen' );
 	}
 	
 	// Deregister styles
@@ -175,9 +173,7 @@
 	function enqueue_styles()
 	{
 		wp_enqueue_style( 'bootstrap' );
-		wp_enqueue_style( 'fonts' );
 		wp_enqueue_style( 'style' );
-		wp_enqueue_style( 'responsive' );
 	}
 	
 	// Login screen styles
