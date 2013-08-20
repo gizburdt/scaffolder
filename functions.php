@@ -52,7 +52,7 @@
 		add_action( 'wp_enqueue_scripts', 	'deregister_styles' );
 		add_action( 'wp_enqueue_scripts', 	'register_styles' );
 		add_action( 'wp_enqueue_scripts', 	'enqueue_styles' );
-		add_action( 'wp_head', 				'add_specific_styles' );
+		// add_action( 'wp_head', 				'add_specific_styles' );
 		// add_action( 'login_head', 		'register_login_styles' );
 		
 		// Scripts
