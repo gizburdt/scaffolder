@@ -66,7 +66,7 @@
 
 		// Menu
 		add_filter( 'wp_nav_menu_objects', 	'add_extra_menu_classes' );
-		add_filter( 'nav_menu_css_class', 	'fix_menu_class' );
+		add_filter( 'nav_menu_css_class', 	'fix_menu_class', 10, 2 );
 
 		// SEO
 		add_filter( 'wpseo_author_link', 	'no_author_on_pages' );
@@ -332,14 +332,14 @@
 	}
 
 	// Fix menu, so the page_for_posts page won't highlight on post type archive
-	function fix_menu_class( $classes = array(), $menu_item = false )
+	function fix_menu_class( $classes = array(), $item = false )
 	{
 		$post_types = get_post_types( array( '_builtin' => false ) );
 		$home 		= get_option( 'page_for_posts' );
 		
 		if ( is_singular( $post_types ) || is_post_type_archive( $post_types ) || is_author() || is_404() )
 		{
-			if( $home == $menu_item->object_id )
+			if( $home == $item->object_id )
 			{
 				if( in_array( 'current_page_parent', $classes ) )
 					unset( $classes[array_search( 'current_page_parent', $classes )] );
