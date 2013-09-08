@@ -1,0 +1,3 @@
+[submodule "includes/cuztom"]
+	path = includes/cuztom
+	url = https://github.com/Gizburdt/Wordpress-Cuztom-Helper.git
