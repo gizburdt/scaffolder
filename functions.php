@@ -1,7 +1,7 @@
 <?php
 
-	// error_reporting( E_ALL );
-	// ini_set( 'display_errors', 1 );
+	error_reporting( E_ALL );
+	ini_set( 'display_errors', 1 );
 
 /*==================================================*/
 /* Setup
@@ -12,12 +12,13 @@
 	function scaffold_setup()
 	{
 		// Includes
+		include( 'includes/cuztom/cuztom.php' );
 		include( 'includes/customize/customizer.php' );
 
-		include( 'includes/widgets/widget.php' );
-		
 		include( 'includes/walkers/walker-menu.php' );
 		include( 'includes/walkers/walker-comment.php' );
+
+		include( 'includes/widgets/widget.php' );
 
 		// Textdomain
 		load_theme_textdomain( 'scaffold', get_template_directory() . '/languages' );
@@ -32,7 +33,7 @@
 		// add_image_size( 'name', width, height, true );
 
 		// Editor
-		// add_editor_style( 'assets/css/editor-style.css' );
+		add_editor_style( 'assets/css/editor-style.css' );
 	}
 
 	
@@ -52,7 +53,7 @@
 		add_action( 'wp_enqueue_scripts', 	'deregister_styles' );
 		add_action( 'wp_enqueue_scripts', 	'register_styles' );
 		add_action( 'wp_enqueue_scripts', 	'enqueue_styles' );
-		// add_action( 'wp_head', 				'add_specific_styles' );
+		add_action( 'wp_head', 				'add_specific_styles' );
 		// add_action( 'login_head', 		'register_login_styles' );
 		
 		// Scripts
@@ -160,6 +161,8 @@
 	function register_styles()
 	{
 		wp_register_style( 'bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css', '', '', 'screen' );
+		wp_register_style( 'font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css', '', '', 'screen' );
+		wp_register_style( 'fancybox', get_template_directory_uri() . '/assets/css/fancybox.css', '', '', 'screen' );
 		wp_register_style( 'style', get_template_directory_uri() . '/style.css', '', '', 'screen' );
 	}
 	
@@ -173,6 +176,8 @@
 	function enqueue_styles()
 	{
 		wp_enqueue_style( 'bootstrap' );
+		wp_enqueue_style( 'font-awesome' );
+		wp_enqueue_style( 'fancybox' );
 		wp_enqueue_style( 'style' );
 	}
 	
@@ -197,7 +202,7 @@
 	// Add specific styles
 	function add_specific_styles()
 	{
-		echo '<!--[if lt IE9]><link rel="stylesheet" id="ie-7-css" href="' . get_template_directory_uri() . '/css/ie.css" type="text/css" media="screen"><![endif]-->';
+		echo '<!--[if lt IE9]><link rel="stylesheet" id="ie-css" href="' . get_template_directory_uri() . '/css/ie.css" type="text/css" media="screen"><![endif]-->';
 	}
 
 
@@ -221,6 +226,7 @@
 		wp_register_script( 'jquery-fitvids', get_template_directory_uri() . '/assets/js/jquery.fitvids.min.js', array( 'jquery' ), '', true );
 		wp_register_script( 'jquery-example', get_template_directory_uri() . '/assets/js/jquery.example.min.js', array( 'jquery' ), '', true);
 		wp_register_script( 'jquery-caroufredsel', get_template_directory_uri() . '/assets/js/jquery.caroufredsel.min.js', array( 'jquery' ), '', true);
+		wp_register_script( 'jquery-fancybox', get_template_directory_uri() . '/assets/js/jquery.fancybox.min.js', array( 'jquery' ), '', true);
 		
 		wp_register_script( 'functions', get_template_directory_uri() . '/assets/js/functions.js', array( 'jquery', 'jquery-ui-core', 'jquery-ui-tabs' ), '', true);
 	}
@@ -238,6 +244,7 @@
 		wp_enqueue_script( 'jquery-fitvids' );
 		wp_enqueue_script( 'jquery-example' );
 		wp_enqueue_script( 'jquery-caroufredsel' );
+		wp_enqueue_script( 'jquery-fancybox' );
 		
 		wp_enqueue_script( 'functions' );
 
@@ -267,43 +274,28 @@
 		) );
 	}
 
-	
 /*==================================================*/
-/* Admin
+/* Sidebars, widgets
 /*==================================================*/
 	
-	// Remove unnecessary pages
-	function remove_menu_pages() 
+	// Register sidebars
+	function register_extra_sidebars()
 	{
-		remove_menu_page( 'link-manager.php' );
-	}
-
-	// Add new dasboard widgets
-	function add_dashboard_widgets() 
-	{
-		// wp_add_dashboard_widget( 'dashboard_widget', 'Dashboard Widget', 'dashboard_widget' );
-	}
-
-	function dashboard_widget() 
-	{
-		echo 'This is a dashboard widget';
+		register_sidebar( array(
+			'name' 			=> 'sidebar',
+			'id'			=> 'sidebar',
+			'description'	=> __( 'Just a sidebar', 'scaffold' ),
+			'before_widget' => '<li id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</li>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		) );
 	}
 	
-	// Remove dashboard widgets
-	function remove_dashboard_widgets() 
+	// Register widgets
+	function register_widgets()
 	{
-		// Core
-		remove_meta_box( 'dashboard_recent_comments', 'dashboard', 'core' );
-		remove_meta_box( 'dashboard_incoming_links', 'dashboard', 'core' );
-		remove_meta_box( 'dashboard_plugins', 'dashboard', 'core' );
-		remove_meta_box( 'dashboard_recent_drafts', 'dashboard', 'core' );
-		remove_meta_box( 'dashboard_primary', 'dashboard', 'core' );
-		remove_meta_box( 'dashboard_secondary', 'dashboard', 'core' );
-		// remove_meta_box( 'dashboard_right_now', 'dashboard', 'core' );
-		// remove_meta_box( 'dashboard_quick_press', 'dashboard', 'core' );
-		
-		// Yoast
-		remove_meta_box( 'yoast_db_widget', 'dashboard', 'normal' );
+		// register_widget( 'Widget' );
 	}
 	
 /*==================================================*/
@@ -360,7 +352,6 @@
 		return $classes;
 	}
 
-
 /*==================================================*/
 /* Excerpt
 /*==================================================*/
@@ -375,29 +366,39 @@
 		return ' [...]';
 	}
 
-
 /*==================================================*/
-/* Sidebars, widgets
+/* Admin
 /*==================================================*/
 	
-	// Register sidebars
-	function register_extra_sidebars()
+	// Remove unnecessary pages
+	function remove_menu_pages() 
 	{
-		register_sidebar( array(
-			'name' 			=> 'sidebar',
-			'id'			=> 'sidebar',
-			'description'	=> __( 'Just a sidebar', 'scaffold' ),
-			'before_widget' => '<li id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</li>',
-			'before_title'  => '<h3 class="widget-title">',
-			'after_title'   => '</h3>',
-		) );
+		remove_menu_page( 'link-manager.php' );
+	}
+
+	// Add new dasboard widgets
+	function add_dashboard_widgets() 
+	{
+		// wp_add_dashboard_widget( 'dashboard_widget', 'Dashboard Widget', 'dashboard_widget' );
 	}
 	
-	// Register widgets
-	function register_widgets()
+	// Remove dashboard widgets
+	function remove_dashboard_widgets() 
 	{
-		// register_widget( 'Widget' );
+		global $wp_meta_boxes;
+
+		// Core
+		unset( $wp_meta_boxes['dashboard']['normal']['core']['dashboard_incoming_links'] );
+		unset( $wp_meta_boxes['dashboard']['normal']['core']['dashboard_plugins'] );
+		unset( $wp_meta_boxes['dashboard']['side']['core']['dashboard_recent_drafts'] );
+		unset( $wp_meta_boxes['dashboard']['normal']['core']['dashboard_recent_comments'] );
+		unset( $wp_meta_boxes['dashboard']['side']['core']['dashboard_primary'] );
+		unset( $wp_meta_boxes['dashboard']['side']['core']['dashboard_secondary'] );
+		// unset( $wp_meta_boxes['dashboard']['side']['core']['dashboard_right_now'] );
+		// unset( $wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press'] );
+		
+		// Yoast
+		unset( $wp_meta_boxes['dashboard']['side']['core']['yoast_db_widget'] );
 	}
 
 /*==================================================*/
@@ -442,6 +443,13 @@
 		return $buttons;
 	}
 
+	// SEO Yoast, no author on pages
+	function no_author_on_pages( $gplus )
+	{
+		if( ! is_singular('post') ) return '';
+
+		return $gplus;
+	}
 
 /*==================================================*/
 /* Pagination
@@ -486,14 +494,4 @@
 	         echo '</div>';
 	     }
 	}
-
-/*==================================================*/
-/* SEO
-/*==================================================*/
-
-	function no_author_on_pages( $gplus )
-	{
-		if( ! is_singular('post') ) return '';
-
-		return $gplus;
-	}
+	
