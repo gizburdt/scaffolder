@@ -12,7 +12,6 @@
 	function scaffold_setup()
 	{
 		// Includes
-		include( 'includes/cuztom/cuztom.php' );
 		include( 'includes/customize/customizer.php' );
 
 		include( 'includes/walkers/walker-menu.php' );
