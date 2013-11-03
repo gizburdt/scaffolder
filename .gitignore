@@ -1,4 +1,9 @@
+# Crap
 .DS_Store
 *.tmproj
 *.sublime-project
 *.sublime-workspace
+
+# Composer
+composer.lock
+vendor/*

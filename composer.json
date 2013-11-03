@@ -1,0 +1,138 @@
+{
+    "name": 		"gizburdt/wordpress-scaffold",
+    "description": 	"Scaffold a Wordpress theme",
+    "repositories": [
+        {
+            "name": "twbs/bootstrap",
+            "type": "vcs",
+            "url": "https://github.com/twbs/bootstrap.git"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "modernizr/modernizr",
+                "version": "dev-master",
+                "source": {
+                    "url": "https://github.com/Modernizr/Modernizr.git",
+                    "type": "git",
+                    "reference": "origin/master"
+                }
+            }
+        },
+        {
+            "name": "fortawesome/font-awesome",
+            "type": "vcs",
+            "url": "https://github.com/FortAwesome/Font-Awesome.git"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "fancyapps/fancybox",
+                "version": "dev-master",
+                "source": {
+                    "url": "https://github.com/fancyapps/fancyBox.git",
+                    "type": "git",
+                    "reference": "origin/master"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "scottjehl/respond",
+                "version": "dev-master",
+                "source": {
+                    "url": "https://github.com/scottjehl/Respond.git",
+                    "type": "git",
+                    "reference": "origin/master"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "wickynilliams/enquire",
+                "version": "dev-master",
+                "source": {
+                    "url": "https://github.com/WickyNilliams/enquire.js.git",
+                    "type": "git",
+                    "reference": "origin/master"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "davatron5000/fitvids",
+                "version": "dev-master",
+                "source": {
+                    "url": "https://github.com/davatron5000/FitVids.js.git",
+                    "type": "git",
+                    "reference": "origin/master"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "mudge/example",
+                "version": "dev-master",
+                "source": {
+                    "url": "https://github.com/mudge/jquery_example.git",
+                    "type": "git",
+                    "reference": "origin/master"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "gilbitron/caroufredsel",
+                "version": "dev-master",
+                "source": {
+                    "url": "https://github.com/gilbitron/carouFredSel.git",
+                    "type": "git",
+                    "reference": "origin/master"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "gizburdt/cuztom",
+                "version": "dev-master",
+                "source": {
+                    "url": "https://github.com/Gizburdt/Wordpress-Cuztom-Helper.git",
+                    "type": "git",
+                    "reference": "origin/master"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "gizburdt/equalsize",
+                "version": "dev-master",
+                "source": {
+                    "url": "https://github.com/Gizburdt/jQuery-equalSize.git",
+                    "type": "git",
+                    "reference": "origin/master"
+                }
+            }
+        }
+    ],
+    "require": {
+        "twbs/bootstrap":           "dev-master",
+        "modernizr/modernizr":      "dev-master",
+        "fortawesome/font-awesome": "dev-master",
+        "fancyapps/fancybox":       "dev-master",
+        "scottjehl/respond":        "dev-master",
+        "wickynilliams/enquire":    "dev-master",
+        "davatron5000/fitvids":     "dev-master",
+        "mudge/example":            "dev-master",
+        "gilbitron/caroufredsel":   "dev-master",
+        "mudge/example":            "dev-master",
+        "gizburdt/cuztom":          "dev-master",
+        "gizburdt/equalsize":       "dev-master"
+    }
+}
