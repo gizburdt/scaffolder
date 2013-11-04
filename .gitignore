@@ -7,3 +7,4 @@
 # Composer
 composer.lock
 vendor/*
+components/*

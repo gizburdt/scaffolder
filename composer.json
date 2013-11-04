@@ -3,23 +3,6 @@
     "description": 	"Scaffold a Wordpress theme",
     "repositories": [
         {
-            "name": "twbs/bootstrap",
-            "type": "vcs",
-            "url": "https://github.com/twbs/bootstrap.git"
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "modernizr/modernizr",
-                "version": "dev-master",
-                "source": {
-                    "url": "https://github.com/Modernizr/Modernizr.git",
-                    "type": "git",
-                    "reference": "origin/master"
-                }
-            }
-        },
-        {
             "name": "fortawesome/font-awesome",
             "type": "vcs",
             "url": "https://github.com/FortAwesome/Font-Awesome.git"
@@ -122,8 +105,8 @@
         }
     ],
     "require": {
-        "twbs/bootstrap":           "dev-master",
-        "modernizr/modernizr":      "dev-master",
+        "twbs/bootstrap":           ">=3.0.1",
+        "components/modernizr":      ">=2.6.2",
         "fortawesome/font-awesome": "dev-master",
         "fancyapps/fancybox":       "dev-master",
         "scottjehl/respond":        "dev-master",
@@ -134,5 +117,8 @@
         "mudge/example":            "dev-master",
         "gizburdt/cuztom":          "dev-master",
         "gizburdt/equalsize":       "dev-master"
+    },
+    "config": {
+        "component-dir": "vendor"
     }
 }
