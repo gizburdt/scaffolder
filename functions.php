@@ -67,7 +67,7 @@
 		// Headers, footers, body
 		add_filter( 'the_generator', 		'scaffold_remove_wp_version' );
 		add_filter( 'body_class', 			'scaffold_body_class' );
-		add_filter( 'wp_title', 			'scaffold_wp_title' );
+		add_filter( 'wp_title', 			'scaffold_wp_title', 10, 2 );
 		add_action( 'wp_head', 				'scaffold_favicon' );
 
 		// Styles
@@ -257,7 +257,7 @@
 	{
 		// Vendor
 		wp_register_script( 'bootstrap', get_template_directory_uri() . '/vendor/twbs/bootstrap/dist/js/bootstrap.min.js', array( 'jquery' ), '', true );
-		wp_register_script( 'modernizr', get_template_directory_uri() . '/vendor/modernizr/modernizr/src/Modernizr.js', '', '', true );
+		wp_register_script( 'modernizr', get_template_directory_uri() . '/vendor/components/modernizr/modernizr.js', '', '', true );
 		wp_register_script( 'respond', get_template_directory_uri() . '/vendor/scottjehl/respond/respond.min.js', '', '', true );
 		wp_register_script( 'enquire', get_template_directory_uri() . '/vendor/wickynilliams/enquire/dist/enquire.min.js', '', '', true );
 		wp_register_script( 'jquery-fancybox', get_template_directory_uri() . '/vendor/fancyapps/fancybox/source/jquery.fancybox.pack.js', array( 'jquery' ), '', true);
