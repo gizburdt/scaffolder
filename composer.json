@@ -3,11 +3,6 @@
     "description": 	"Scaffold a Wordpress theme",
     "repositories": [
         {
-            "name": "fortawesome/font-awesome",
-            "type": "vcs",
-            "url": "https://github.com/FortAwesome/Font-Awesome.git"
-        },
-        {
             "type": "package",
             "package": {
                 "name": "fancyapps/fancybox",
@@ -106,8 +101,8 @@
     ],
     "require": {
         "twbs/bootstrap":           ">=3.0.1",
-        "components/modernizr":      ">=2.6.2",
-        "fortawesome/font-awesome": "dev-master",
+        "components/modernizr":     ">=2.6.2",
+        "components/font-awesome":  ">=4.0.2",
         "fancyapps/fancybox":       "dev-master",
         "scottjehl/respond":        "dev-master",
         "wickynilliams/enquire":    "dev-master",
