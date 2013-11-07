@@ -62,7 +62,7 @@ if( ! class_exists( 'Scaffold' ) ) :
 			// Widgets
 			add_action( 'widgets_init', 		'scaffold_register_extra_sidebars' );
 			add_action( 'widgets_init', 		'scaffold_register_widgets' );
-			add_filter(' widget_text', 			'do_shortcode' );
+			add_filter( 'widget_text', 			'do_shortcode' );
 
 			// Mail
 			add_filter( 'wp_mail_from', 		'scaffold_new_mail_from' );
