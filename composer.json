@@ -1,5 +1,6 @@
 {
-    "name": 		"gizburdt/wordpress-scaffold",
+    "name": 		"gizburdt/scaffold",
+    "type":         "wordpress-theme",
     "description": 	"Scaffold a Wordpress theme",
     "repositories": [
         {
@@ -100,6 +101,7 @@
         }
     ],
     "require": {
+        "composer/installers":      "~1.0",
         "twbs/bootstrap":           ">=3.0.1",
         "components/modernizr":     ">=2.6.2",
         "components/font-awesome":  ">=4.0.2",

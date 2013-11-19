@@ -1,19 +1,21 @@
 <?php
 
-// Error reporting
-error_reporting( E_ALL );
-ini_set( 'display_errors', 1 );
-
 // BLock direct access
 if( ! defined( 'ABSPATH' ) ) exit;
 
 if( ! class_exists( 'Scaffold' ) ) :
 
+	// Error reporting
+	error_reporting( E_ALL );
+	ini_set( 'display_errors', 1 );
+
 	// Set content_width
 	if ( ! isset( $content_width ) )
 		$content_width = 640;
 
-
+	/**
+	 * 
+	 */
 	class Scaffold
 	{
 		function __construct()
@@ -26,12 +28,14 @@ if( ! class_exists( 'Scaffold' ) ) :
 
 		function includes()
 		{
-			// Includes
+			// Customizer
 			include( 'includes/customize/customizer.php' );
 
+			// Walkers
 			include( 'includes/walkers/walker-menu.php' );
 			include( 'includes/walkers/walker-comment.php' );
 
+			// Widgets
 			include( 'includes/widgets/widget.php' );
 		}
 
