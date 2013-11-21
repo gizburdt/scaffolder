@@ -1,7 +1,21 @@
 {
-    "name": 		"gizburdt/scaffold",
-    "type":         "wordpress-theme",
-    "description": 	"Scaffold a Wordpress theme",
+    "name": 		                "gizburdt/scaffold",
+    "description": 	                "Scaffold a Wordpress theme",
+    "require": {
+        "composer/installers":      "v1.0.6",
+        "twbs/bootstrap":           ">=3.0.2",
+        "components/modernizr":     ">=2.6.2",
+        "components/font-awesome":  ">=4.0.2",
+        "fancyapps/fancybox":       "dev-master",
+        "scottjehl/respond":        "dev-master",
+        "wickynilliams/enquire":    "dev-master",
+        "davatron5000/fitvids":     "dev-master",
+        "mudge/example":            "dev-master",
+        "gilbitron/caroufredsel":   "dev-master",
+        "mudge/example":            "dev-master",
+        "gizburdt/cuztom":          "dev-master",
+        "gizburdt/equalsize":       "dev-master"
+    },
     "repositories": [
         {
             "type": "package",
@@ -100,19 +114,7 @@
             }
         }
     ],
-    "require": {
-        "composer/installers":      "v1.0.6",
-        "twbs/bootstrap":           ">=3.0.1",
-        "components/modernizr":     ">=2.6.2",
-        "components/font-awesome":  ">=4.0.2",
-        "fancyapps/fancybox":       "dev-master",
-        "scottjehl/respond":        "dev-master",
-        "wickynilliams/enquire":    "dev-master",
-        "davatron5000/fitvids":     "dev-master",
-        "mudge/example":            "dev-master",
-        "gilbitron/caroufredsel":   "dev-master",
-        "mudge/example":            "dev-master",
-        "gizburdt/cuztom":          "dev-master",
-        "gizburdt/equalsize":       "dev-master"
+    "config": {
+        "component-dir": "vendor"
     }
 }
