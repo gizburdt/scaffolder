@@ -224,7 +224,6 @@ if( ! class_exists( 'Scaffold' ) ) :
 	{
 		// Vendor
 		wp_register_style( 'bootstrap', CUZTOM_VENDOR_URI . '/twbs/bootstrap/dist/css/bootstrap.min.css', '', '', 'screen' );
-		wp_register_style( 'font-awesome', CUZTOM_VENDOR_URI . '/components/font-awesome/css/font-awesome.min.css', '', '', 'screen' );
 		wp_register_style( 'fancybox', CUZTOM_VENDOR_URI . '/fancyapps/fancybox/source/jquery.fancybox.css', '', '', 'screen' );
 		
 		// Theme
