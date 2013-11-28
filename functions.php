@@ -15,7 +15,7 @@ if( ! class_exists( 'Scaffold' ) ) :
 
 	// Assets dir (composer stuff)
 	if( ! defined( 'CUZTOM_VENDOR_URI' ) )
-		define( 'CUZTOM_VENDOR_URI', WP_CONTENT_DIR . '/vendor' );
+		define( 'CUZTOM_VENDOR_URI', WP_CONTENT_URL . '/vendor' );
 
 	/**
 	 * Scaffold class
@@ -280,7 +280,7 @@ if( ! class_exists( 'Scaffold' ) ) :
 		// Vendor
 		wp_register_script( 'bootstrap', CUZTOM_VENDOR_URI . '/twbs/bootstrap/dist/js/bootstrap.min.js', array( 'jquery' ), '', true );
 		wp_register_script( 'modernizr', CUZTOM_VENDOR_URI . '/components/modernizr/modernizr.js', '', '', true );
-		wp_register_script( 'respond', CUZTOM_VENDOR_URI . '/scottjehl/respond/respond.min.js', '', '', true );
+		wp_register_script( 'respond', CUZTOM_VENDOR_URI . '/scottjehl/respond/dest/respond.min.js', '', '', true );
 		wp_register_script( 'enquire', CUZTOM_VENDOR_URI . '/wickynilliams/enquire/dist/enquire.min.js', '', '', true );
 		wp_register_script( 'jquery-fancybox', CUZTOM_VENDOR_URI . '/fancyapps/fancybox/source/jquery.fancybox.pack.js', array( 'jquery' ), '', true);
 		
