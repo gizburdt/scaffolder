@@ -17,6 +17,9 @@
         "gizburdt/cuztom":          "dev-master",
         "gizburdt/equalsize":       "dev-master"
     },
+    "config": {
+        "component-dir": "vendor"
+    },
     "repositories": [
         {
             "type": "package",
@@ -114,8 +117,5 @@
                 }
             }
         }
-    ],
-    "config": {
-        "component-dir": "vendor"
-    }
+    ]
 }
