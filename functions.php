@@ -1,20 +1,24 @@
 <?php
 
-// BLock direct access
+// Error reporting
+error_reporting( E_ALL );
+ini_set( 'display_errors', 1 );
+
+// Block direct access
 if( ! defined( 'ABSPATH' ) ) exit;
 
 if( ! class_exists( 'Scaffold' ) ) :
-
-	// Error reporting
-	error_reporting( E_ALL );
-	ini_set( 'display_errors', 1 );
 
 	// Set content_width
 	if ( ! isset( $content_width ) )
 		$content_width = 640;
 
+	// Assets dir (composer stuff)
+	if( ! defined( CUZTOM_VENDOR_URI ) )
+		define( CUZTOM_VENDOR_URI, WP_CONTENT_DIR . '/vendor' );
+
 	/**
-	 * 
+	 * Scaffold class
 	 */
 	class Scaffold
 	{
@@ -219,9 +223,9 @@ if( ! class_exists( 'Scaffold' ) ) :
 	function scaffold_register_styles()
 	{
 		// Vendor
-		wp_register_style( 'bootstrap', get_template_directory_uri() . '/vendor/twbs/bootstrap/dist/css/bootstrap.min.css', '', '', 'screen' );
-		wp_register_style( 'font-awesome', get_template_directory_uri() . '/vendor/components/font-awesome/css/font-awesome.min.css', '', '', 'screen' );
-		wp_register_style( 'fancybox', get_template_directory_uri() . '/vendor/fancyapps/fancybox/source/jquery.fancybox.css', '', '', 'screen' );
+		wp_register_style( 'bootstrap', CUZTOM_VENDOR_URI . '/twbs/bootstrap/dist/css/bootstrap.min.css', '', '', 'screen' );
+		wp_register_style( 'font-awesome', CUZTOM_VENDOR_URI . '/components/font-awesome/css/font-awesome.min.css', '', '', 'screen' );
+		wp_register_style( 'fancybox', CUZTOM_VENDOR_URI . '/fancyapps/fancybox/source/jquery.fancybox.css', '', '', 'screen' );
 		
 		// Theme
 		wp_register_style( 'style', get_template_directory_uri() . '/style.css', '', '', 'screen' );
@@ -274,16 +278,16 @@ if( ! class_exists( 'Scaffold' ) ) :
 	function scaffold_register_scripts() 
 	{
 		// Vendor
-		wp_register_script( 'bootstrap', get_template_directory_uri() . '/vendor/twbs/bootstrap/dist/js/bootstrap.min.js', array( 'jquery' ), '', true );
-		wp_register_script( 'modernizr', get_template_directory_uri() . '/vendor/components/modernizr/modernizr.js', '', '', true );
-		wp_register_script( 'respond', get_template_directory_uri() . '/vendor/scottjehl/respond/respond.min.js', '', '', true );
-		wp_register_script( 'enquire', get_template_directory_uri() . '/vendor/wickynilliams/enquire/dist/enquire.min.js', '', '', true );
-		wp_register_script( 'jquery-fancybox', get_template_directory_uri() . '/vendor/fancyapps/fancybox/source/jquery.fancybox.pack.js', array( 'jquery' ), '', true);
+		wp_register_script( 'bootstrap', CUZTOM_VENDOR_URI . '/twbs/bootstrap/dist/js/bootstrap.min.js', array( 'jquery' ), '', true );
+		wp_register_script( 'modernizr', CUZTOM_VENDOR_URI . '/components/modernizr/modernizr.js', '', '', true );
+		wp_register_script( 'respond', CUZTOM_VENDOR_URI . '/scottjehl/respond/respond.min.js', '', '', true );
+		wp_register_script( 'enquire', CUZTOM_VENDOR_URI . '/wickynilliams/enquire/dist/enquire.min.js', '', '', true );
+		wp_register_script( 'jquery-fancybox', CUZTOM_VENDOR_URI . '/fancyapps/fancybox/source/jquery.fancybox.pack.js', array( 'jquery' ), '', true);
 		
 		// Assets
-		wp_register_script( 'jquery-fitvids', get_template_directory_uri() . '/vendor/davatron5000/fitvids/jquery.fitvids.js', array( 'jquery' ), '', true );
-		wp_register_script( 'jquery-example', get_template_directory_uri() . '/vendor/mudge/example/jquery.example.min.js', array( 'jquery' ), '', true);
-		wp_register_script( 'jquery-caroufredsel', get_template_directory_uri() . '/vendor/gilbitron/caroufredsel/jquery.carouFredSel-6.2.1-packed.js', array( 'jquery' ), '', true);
+		wp_register_script( 'jquery-fitvids', CUZTOM_VENDOR_URI . '/davatron5000/fitvids/jquery.fitvids.js', array( 'jquery' ), '', true );
+		wp_register_script( 'jquery-example', CUZTOM_VENDOR_URI . '/mudge/example/jquery.example.min.js', array( 'jquery' ), '', true);
+		wp_register_script( 'jquery-caroufredsel', CUZTOM_VENDOR_URI . '/gilbitron/caroufredsel/jquery.carouFredSel-6.2.1-packed.js', array( 'jquery' ), '', true);
 
 		// Theme
 		wp_register_script( 'functions', get_template_directory_uri() . '/assets/js/functions.js', array( 'jquery', 'jquery-ui-core', 'jquery-ui-tabs' ), '', true);
