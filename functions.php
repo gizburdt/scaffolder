@@ -14,8 +14,8 @@ if( ! class_exists( 'Scaffold' ) ) :
 		$content_width = 640;
 
 	// Assets dir (composer stuff)
-	if( ! defined( CUZTOM_VENDOR_URI ) )
-		define( CUZTOM_VENDOR_URI, WP_CONTENT_DIR . '/vendor' );
+	if( ! defined( 'CUZTOM_VENDOR_URI' ) )
+		define( 'CUZTOM_VENDOR_URI', WP_CONTENT_DIR . '/vendor' );
 
 	/**
 	 * Scaffold class
