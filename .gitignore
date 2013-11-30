@@ -8,3 +8,6 @@
 composer.lock
 vendor/*
 components/*
+
+# Codekit
+codekit-config.json
