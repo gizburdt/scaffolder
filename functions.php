@@ -120,17 +120,17 @@ if( ! function_exists( 'scaffold_add_styles' ) ) :
 	{
 		if( is_admin() )
 		{
+			add_action( 'admin_init', 			'scaffold_register_admin_styles' );
+			add_action( 'admin_print_styles', 	'scaffold_enqueue_admin_styles' );
+		}
+		else
+		{
 			// Styles
 			add_action( 'wp_enqueue_scripts', 	'scaffold_deregister_styles' );
 			add_action( 'wp_enqueue_scripts', 	'scaffold_register_styles' );
 			add_action( 'wp_enqueue_scripts', 	'scaffold_enqueue_styles' );
 			add_action( 'wp_head', 				'scaffold_add_specific_styles' );
 			add_action( 'login_head', 			'scaffold_register_login_styles' );
-		}
-		else
-		{
-			add_action( 'admin_init', 			'scaffold_register_admin_styles' );
-			add_action( 'admin_print_styles', 	'scaffold_enqueue_admin_styles' );
 		}
 	}
 endif;
