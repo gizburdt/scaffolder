@@ -331,9 +331,9 @@ if( ! class_exists( 'Scaffold' ) ) :
 	function scaffold_localize_scripts()
 	{
 		wp_localize_script( 'functions', 'Scaffold', array(
-			'template_uri'		=> get_template_directory_uri(),
-			'home_url'			=> get_home_url(),
-			'ajax_url'			=> admin_url( 'admin-ajax.php' )
+			'template_uri'	=> get_template_directory_uri(),
+			'home_url'		=> get_home_url(),
+			'ajax_url'		=> admin_url( 'admin-ajax.php' )
 		) );
 	}
 
