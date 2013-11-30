@@ -35,6 +35,7 @@ if( ! function_exists( 'scaffold_setup' ) ) :
 	{
 		// Textdomain
 		load_theme_textdomain( 'scaffold', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'scaffold', get_stylesheet_directory_uri() . '/languages' );
 
 		// Theme support
 		add_theme_support( 'menus' );
@@ -295,7 +296,7 @@ if( ! function_exists( 'scaffold_register_styles' ) ) :
 		wp_register_style( 'fancybox', CUZTOM_VENDOR_URI . '/fancyapps/fancybox/source/jquery.fancybox.css', '', '', 'screen' );
 		
 		// Theme
-		wp_register_style( 'style', get_template_directory_uri() . '/style.css', '', '', 'screen' );
+		wp_register_style( 'style', get_stylesheet_directory_uri() . '/style.css', '', '', 'screen' );
 	}
 endif;
 
@@ -314,7 +315,7 @@ endif;
 if( ! function_exists( 'scaffold_register_login_styles' ) ) :
 	function scaffold_register_login_styles()
 	{
-		echo '<link rel="stylesheet" type="text/css" href="' . get_template_directory_uri() . '/assets/css/login.css">';
+		echo '<link rel="stylesheet" type="text/css" href="' . get_stylesheet_directory_uri() . '/assets/css/login.css">';
 	}
 endif;
 
@@ -322,7 +323,7 @@ endif;
 if( ! function_exists( 'scaffold_register_admin_styles' ) ) :
 	function scaffold_register_admin_styles()
 	{
-		wp_register_style( 'admin-style', get_template_directory_uri() . '/assets/css/admin.css', '', '', 'screen' );
+		wp_register_style( 'admin-style', get_stylesheet_directory_uri() . '/assets/css/admin.css', '', '', 'screen' );
 	}
 endif;
 
@@ -338,7 +339,7 @@ endif;
 if( ! function_exists( 'scaffold_add_specific_styles' ) ) :
 	function scaffold_add_specific_styles()
 	{
-		echo '<!--[if lt IE9]><link rel="stylesheet" id="ie-css" href="' . get_template_directory_uri() . '/css/ie.css" type="text/css" media="screen"><![endif]-->';
+		echo '<!--[if lt IE9]><link rel="stylesheet" id="ie-css" href="' . get_stylesheet_directory_uri() . '/css/ie.css" type="text/css" media="screen"><![endif]-->';
 	}
 endif;
 
@@ -371,7 +372,7 @@ if( ! function_exists( 'scaffold_register_scripts' ) ) :
 		wp_register_script( 'jquery-caroufredsel', CUZTOM_VENDOR_URI . '/gilbitron/caroufredsel/jquery.carouFredSel-6.2.1-packed.js', array( 'jquery' ), '', true);
 
 		// Theme
-		wp_register_script( 'functions', get_template_directory_uri() . '/assets/js/functions.js', array( 'jquery', 'jquery-ui-core', 'jquery-ui-tabs' ), '', true);
+		wp_register_script( 'functions', get_stylesheet_directory_uri() . '/assets/js/functions.js', array( 'jquery', 'jquery-ui-core', 'jquery-ui-tabs' ), '', true);
 	}
 endif;
 
@@ -404,7 +405,7 @@ endif;
 if( ! function_exists( 'scaffold_register_admin_scripts' ) ) :
 	function scaffold_register_admin_scripts()
 	{
-		wp_register_script( 'admin-functions', get_template_directory_uri() . '/assets/js/admin.js' );
+		wp_register_script( 'admin-functions', get_stylesheet_directory_uri() . '/assets/js/admin.js' );
 	}
 endif;
 
@@ -421,9 +422,10 @@ if( ! function_exists( 'scaffold_localize_scripts' ) ) :
 	function scaffold_localize_scripts()
 	{
 		wp_localize_script( 'functions', 'Scaffold', array(
-			'template_uri'	=> get_template_directory_uri(),
-			'home_url'		=> get_home_url(),
-			'ajax_url'		=> admin_url( 'admin-ajax.php' )
+			'template_uri'		=> get_template_directory_uri(),
+			'stylesheet_uri'	=> get_stylesheet_directory_uri(),
+			'home_url'			=> get_home_url(),
+			'ajax_url'			=> admin_url( 'admin-ajax.php' )
 		) );
 	}
 endif;
