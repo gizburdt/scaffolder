@@ -51,10 +51,6 @@ function scaffold_setup()
 	// Widgets
 	add_action( 'widgets_init', 		'scaffold_register_extra_sidebars' );
 	add_action( 'widgets_init', 		'scaffold_register_widgets' );
-	
-
-	// Mail
-	
 }
 endif;
 add_action( 'after_theme_setup', 'scaffold_setup' );

@@ -110,13 +110,3 @@ function scaffold_new_mail_from_name( $name )
 }
 add_filter( 'wp_mail_from_name', 'scaffold_new_mail_from_name' );
 
-
-
-
-
-
-
-
-
-
-
