@@ -155,15 +155,15 @@ function scaffold_localize_scripts()
 /**
  * All scaffold filters
  */
-require get_template_directory() . '/scaffold/filters.php';
+require get_template_directory() . '/includes/filters.php';
 
 /**
  * All scaffold filters for admin
  */
-require get_template_directory() . '/scaffold/filters-admin.php';
+require get_template_directory() . '/includes/filters-admin.php';
 
 /**
  * Helper functions
  */
-require get_template_directory() . '/scaffold/helpers.php';
+require get_template_directory() . '/includes/helpers.php';
 
