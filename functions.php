@@ -47,13 +47,9 @@ function scaffold_setup()
 		'secondary-menu'	=> __( 'Secondary', 'scaffold' ),
 		'footer-menu'		=> __( 'Footer Menu', 'scaffold' )
 	) );
-
-	// Widgets
-	add_action( 'widgets_init', 		'scaffold_register_extra_sidebars' );
-	add_action( 'widgets_init', 		'scaffold_register_widgets' );
 }
 endif;
-add_action( 'after_theme_setup', 'scaffold_setup', 10 );
+add_action( 'after_setup_theme', 'scaffold_setup' );
 
 /**
  * Init for Scaffold Child
@@ -61,7 +57,7 @@ add_action( 'after_theme_setup', 'scaffold_setup', 10 );
 function scaffold_child_init() {
 	do_action('scaffold_child_init');
 }
-add_action( 'after_theme_setup', 'scaffold_child_init', 20 );
+add_action( 'after_setup_theme', 'scaffold_child_init' );
 
 /**
  * Enqueue scripts and styles.
