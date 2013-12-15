@@ -126,22 +126,6 @@ function scaffold_enqueue_scripts()
 
 	if ( is_singular() && get_option( 'thread_comments' ) ) 
 		wp_enqueue_script( 'comment-reply' );
-	
-	// Localize
-	scaffold_localize_scripts();
-}
-
-/**
- * Localize scripts.
- */
-function scaffold_localize_scripts()
-{
-	wp_localize_script( 'functions', 'Scaffold', array(
-		'template_uri'		=> get_template_directory_uri(),
-		'stylesheet_uri'	=> get_stylesheet_directory_uri(),
-		'home_url'			=> get_home_url(),
-		'ajax_url'			=> admin_url( 'admin-ajax.php' )
-	) );
 }
 
 /**
