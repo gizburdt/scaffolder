@@ -53,7 +53,15 @@ function scaffold_setup()
 	add_action( 'widgets_init', 		'scaffold_register_widgets' );
 }
 endif;
-add_action( 'after_theme_setup', 'scaffold_setup' );
+add_action( 'after_theme_setup', 'scaffold_setup', 10 );
+
+/**
+ * Init for Scaffold Child
+ */
+function scaffold_child_init() {
+	do_action('scaffold_child_init');
+}
+add_action( 'after_theme_setup', 'scaffold_child_init', 20 );
 
 /**
  * Enqueue scripts and styles.
