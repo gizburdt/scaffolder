@@ -108,9 +108,6 @@ function scaffold_register_scripts()
 	wp_register_script( 'jquery-fitvids', SCAFFOLD_VENDOR_DIR . '/davatron5000/fitvids/jquery.fitvids.js', array( 'jquery' ), '', true );
 	wp_register_script( 'jquery-example', SCAFFOLD_VENDOR_DIR . '/mudge/example/jquery.example.min.js', array( 'jquery' ), '', true);
 	wp_register_script( 'jquery-caroufredsel', SCAFFOLD_VENDOR_DIR . '/gilbitron/caroufredsel/jquery.carouFredSel-6.2.1-packed.js', array( 'jquery' ), '', true);
-
-	// Theme
-	wp_register_script( 'functions', get_stylesheet_directory_uri() . '/assets/js/functions.js', array( 'jquery', 'jquery-ui-core', 'jquery-ui-tabs' ), '', true);
 }
 
 /**
@@ -126,7 +123,6 @@ function scaffold_enqueue_scripts()
 	wp_enqueue_script( 'jquery-example' );
 	wp_enqueue_script( 'jquery-caroufredsel' );
 	wp_enqueue_script( 'jquery-fancybox' );
-	wp_enqueue_script( 'functions' );
 
 	if ( is_singular() && get_option( 'thread_comments' ) ) 
 		wp_enqueue_script( 'comment-reply' );
