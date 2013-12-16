@@ -27,7 +27,7 @@
 				<?php 
 				
 					wp_nav_menu( array(
-						'theme_location'	=> 'primary',
+						'theme_location'	=> 'primary-menu',
 						'container_class'	=> 'primary-menu-container menu-container',
 						'container_id'		=> 'primary-menu-container',
 						'items_wrap'      	=> '<ul id="%1$s" class="%2$s cleared">%3$s</ul>',
