@@ -8,9 +8,14 @@ if ( ! isset( $content_width ) ) {
 	$content_width = 640;
 }
 
+// Assets/vendor url
+if( ! defined( 'SCAFFOLD_VENDOR_URL' ) ) {
+	define( 'SCAFFOLD_VENDOR_URL', WP_CONTENT_URL . '/vendor' ); // get_stylesheet_directory_uri()
+}
+
 // Assets/vendor dir
 if( ! defined( 'SCAFFOLD_VENDOR_DIR' ) ) {
-	define( 'SCAFFOLD_VENDOR_DIR', WP_CONTENT_URL . '/vendor' );
+	define( 'SCAFFOLD_VENDOR_DIR', WP_CONTENT_DIR . '/vendor' );
 }
 
 
@@ -80,7 +85,7 @@ add_action( 'init', 'scaffold_styles_scripts' );
 function scaffold_register_styles()
 {
 	// Vendor
-	wp_register_style( 'fancybox', SCAFFOLD_VENDOR_DIR . '/fancyapps/fancybox/source/jquery.fancybox.css', '', '', 'screen' );
+	wp_register_style( 'fancybox', SCAFFOLD_VENDOR_URL . '/fancyapps/fancybox/source/jquery.fancybox.css', '', '', 'screen' );
 	
 	// Theme
 	wp_register_style( 'style', get_stylesheet_directory_uri() . '/style.css', '', '', 'screen' );
@@ -101,14 +106,14 @@ function scaffold_enqueue_styles()
 function scaffold_register_scripts() 
 {
 	// Vendor
-	wp_register_script( 'bootstrap', SCAFFOLD_VENDOR_DIR . '/twbs/bootstrap/dist/js/bootstrap.min.js', array( 'jquery' ), '', true );
-	wp_register_script( 'modernizr', SCAFFOLD_VENDOR_DIR . '/components/modernizr/modernizr.js', '', '', true );
-	wp_register_script( 'respond', SCAFFOLD_VENDOR_DIR . '/scottjehl/respond/dest/respond.min.js', '', '', true );
-	wp_register_script( 'enquire', SCAFFOLD_VENDOR_DIR . '/wickynilliams/enquire/dist/enquire.min.js', '', '', true );
-	wp_register_script( 'jquery-fitvids', SCAFFOLD_VENDOR_DIR . '/davatron5000/fitvids/jquery.fitvids.js', array( 'jquery' ), '', true );
-	wp_register_script( 'jquery-example', SCAFFOLD_VENDOR_DIR . '/mudge/example/jquery.example.min.js', array( 'jquery' ), '', true);
-	wp_register_script( 'jquery-caroufredsel', SCAFFOLD_VENDOR_DIR . '/gilbitron/caroufredsel/jquery.carouFredSel-6.2.1-packed.js', array( 'jquery' ), '', true);
-	wp_register_script( 'jquery-fancybox', SCAFFOLD_VENDOR_DIR . '/fancyapps/fancybox/source/jquery.fancybox.pack.js', array( 'jquery' ), '', true);
+	wp_register_script( 'bootstrap', SCAFFOLD_VENDOR_URL . '/twbs/bootstrap/dist/js/bootstrap.min.js', array( 'jquery' ), '', true );
+	wp_register_script( 'modernizr', SCAFFOLD_VENDOR_URL . '/components/modernizr/modernizr.js', '', '', true );
+	wp_register_script( 'respond', SCAFFOLD_VENDOR_URL . '/scottjehl/respond/dest/respond.min.js', '', '', true );
+	wp_register_script( 'enquire', SCAFFOLD_VENDOR_URL . '/wickynilliams/enquire/dist/enquire.min.js', '', '', true );
+	wp_register_script( 'jquery-fitvids', SCAFFOLD_VENDOR_URL . '/davatron5000/fitvids/jquery.fitvids.js', array( 'jquery' ), '', true );
+	wp_register_script( 'jquery-example', SCAFFOLD_VENDOR_URL . '/mudge/example/jquery.example.min.js', array( 'jquery' ), '', true);
+	wp_register_script( 'jquery-caroufredsel', SCAFFOLD_VENDOR_URL . '/gilbitron/caroufredsel/jquery.carouFredSel-6.2.1-packed.js', array( 'jquery' ), '', true);
+	wp_register_script( 'jquery-fancybox', SCAFFOLD_VENDOR_URL . '/fancyapps/fancybox/source/jquery.fancybox.pack.js', array( 'jquery' ), '', true);
 }
 
 /**
