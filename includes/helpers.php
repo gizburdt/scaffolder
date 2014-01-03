@@ -6,7 +6,7 @@ if( ! defined( 'ABSPATH' ) ) exit;
 /**
  * Helper function to generate normal pagination
  */
-function scaffold_pagination( $pages = '', $range = 2 )
+function scaffold_paging_nav( $pages = '', $range = 2 )
 {  
      $showitems = ( $range * 2 ) + 1;
 
@@ -43,4 +43,30 @@ function scaffold_pagination( $pages = '', $range = 2 )
 			echo '<a href="' . get_pagenum_link($pages) . '">&raquo;</a>';
          echo '</div>';
      }
+}
+
+/**
+ * Display navigation to next/previous post when applicable.
+ * Props to _s
+ *
+ * @return void
+ */
+function scaffold_post_nav() {
+    // Don't print empty markup if there's nowhere to navigate.
+    $previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
+    $next     = get_adjacent_post( false, '', false );
+
+    if ( ! $next && ! $previous ) {
+        return;
+    }
+    
+    ?>
+    <nav class="navigation post-navigation" role="navigation">
+        <h1 class="screen-reader-text"><?php _e( 'Post navigation', '_s' ); ?></h1>
+        <div class="nav-links">
+            <?php previous_post_link( '%link', _x( '<span class="meta-nav">&larr;</span> %title', 'Previous post link', '_s' ) ); ?>
+            <?php next_post_link(     '%link', _x( '%title <span class="meta-nav">&rarr;</span>', 'Next post link',     '_s' ) ); ?>
+        </div>
+    </nav>
+    <?php
 }

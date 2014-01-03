@@ -29,6 +29,8 @@
 
 				<?php endwhile; ?>
 
+				<?php scaffold_paging_nav(); ?>
+
 			<?php else : ?>
 
 				<?php get_template_part( 'content', 'none' ); ?>

@@ -9,7 +9,7 @@
 				
 				<h2><?php the_title(); ?></h2>
 				
-				<?php the_content(); ?>
+				<?php get_template_part( 'content', get_post_format() ); ?>
 				
 			<?php endwhile; endif; ?>
 			

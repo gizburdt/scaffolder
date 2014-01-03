@@ -5,7 +5,6 @@
 ?>
 
 <div id="comments" class="comments">
-
 	<?php if ( have_comments() ) : ?>
 
 		<h2 class="comments-title">
@@ -48,5 +47,4 @@
 	<?php endif; ?>
 
 	<?php comment_form(); ?>
-
 </div>
