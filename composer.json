@@ -4,57 +4,18 @@
     "description": 	                "Scaffold a Wordpress theme",
     "require": {
         "composer/installers":      "~1.0",
-        "twbs/bootstrap":           ">=3.0.2",
-        "components/modernizr":     ">=2.6.2",
-        "fancyapps/fancybox":       "dev-master",
-        "scottjehl/respond":        "dev-master",
-        "wickynilliams/enquire":    "dev-master",
-        "davatron5000/fitvids":     "dev-master",
-        "mudge/example":            "dev-master",
-        "gilbitron/caroufredsel":   "dev-master",
-        "mudge/example":            "dev-master",
         "gizburdt/cuztom":          "dev-master",
-        "gizburdt/equalsize":       "dev-master"
+        "davatron5000/fitvids":     "dev-master",
+        "mudge/example":            "dev-master"
     },
     "config": {
-        "component-dir": "vendor"
+        "component-dir": "vendor",
     },
     "repositories": [
         {
-            "type": "package",
-            "package": {
-                "name": "fancyapps/fancybox",
-                "version": "dev-master",
-                "source": {
-                    "url": "https://github.com/fancyapps/fancyBox.git",
-                    "type": "git",
-                    "reference": "origin/master"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "scottjehl/respond",
-                "version": "dev-master",
-                "source": {
-                    "url": "https://github.com/scottjehl/Respond.git",
-                    "type": "git",
-                    "reference": "origin/master"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "wickynilliams/enquire",
-                "version": "dev-master",
-                "source": {
-                    "url": "https://github.com/WickyNilliams/enquire.js.git",
-                    "type": "git",
-                    "reference": "origin/master"
-                }
-            }
+            "name": "gizburdt/cuztom",
+            "type": "vcs",
+            "url": "https://github.com/Gizburdt/Wordpress-Cuztom-Helper.git"
         },
         {
             "type": "package",
@@ -75,42 +36,6 @@
                 "version": "dev-master",
                 "source": {
                     "url": "https://github.com/mudge/jquery_example.git",
-                    "type": "git",
-                    "reference": "origin/master"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "gilbitron/caroufredsel",
-                "version": "dev-master",
-                "source": {
-                    "url": "https://github.com/gilbitron/carouFredSel.git",
-                    "type": "git",
-                    "reference": "origin/master"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "gizburdt/cuztom",
-                "version": "dev-master",
-                "source": {
-                    "url": "https://github.com/Gizburdt/Wordpress-Cuztom-Helper.git",
-                    "type": "git",
-                    "reference": "origin/master"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "gizburdt/equalsize",
-                "version": "dev-master",
-                "source": {
-                    "url": "https://github.com/Gizburdt/jQuery-equalSize.git",
                     "type": "git",
                     "reference": "origin/master"
                 }
