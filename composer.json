@@ -9,7 +9,7 @@
         "mudge/example":            "dev-master"
     },
     "config": {
-        "component-dir": "vendor",
+        "component-dir": "vendor"
     },
     "repositories": [
         {
