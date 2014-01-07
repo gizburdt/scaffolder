@@ -85,7 +85,7 @@ add_action( 'init', 'scaffold_styles_scripts' );
 function scaffold_register_styles()
 {
 	// Vendor
-	wp_register_style( 'fancybox', SCAFFOLD_VENDOR_URL . '/fancyapps/fancybox/source/jquery.fancybox.css', '', '', 'screen' );
+	wp_register_style( 'fancybox', SCAFFOLD_VENDOR_URL . '/fancybox/source/jquery.fancybox.css', '', '', 'screen' );
 	
 	// Theme
 	wp_register_style( 'style', get_stylesheet_directory_uri() . '/style.css', '', '', 'screen' );
