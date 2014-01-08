@@ -51,7 +51,8 @@ function scaffold_paging_nav( $pages = '', $range = 2 )
  *
  * @return void
  */
-function scaffold_post_nav() {
+function scaffold_post_nav() 
+{
     // Don't print empty markup if there's nowhere to navigate.
     $previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
     $next     = get_adjacent_post( false, '', false );
@@ -62,10 +63,10 @@ function scaffold_post_nav() {
     
     ?>
     <nav class="navigation post-navigation" role="navigation">
-        <h1 class="screen-reader-text"><?php _e( 'Post navigation', '_s' ); ?></h1>
+        <h1 class="screen-reader-text"><?php _e( 'Post navigation', 'scaffold' ); ?></h1>
         <div class="nav-links">
-            <?php previous_post_link( '%link', _x( '<span class="meta-nav">&larr;</span> %title', 'Previous post link', '_s' ) ); ?>
-            <?php next_post_link(     '%link', _x( '%title <span class="meta-nav">&rarr;</span>', 'Next post link',     '_s' ) ); ?>
+            <?php previous_post_link( '%link', _x( '<span class="meta-nav">&larr;</span> %title', 'Previous post link', 'scaffold' ) ); ?>
+            <?php next_post_link(     '%link', _x( '%title <span class="meta-nav">&rarr;</span>', 'Next post link',     'scaffold' ) ); ?>
         </div>
     </nav>
     <?php
