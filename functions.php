@@ -59,10 +59,10 @@ add_action( 'after_setup_theme', 'scaffold_setup' );
 /**
  * Init for Scaffold Child
  */
-function scaffold_child_init() {
-	do_action('scaffold_child_init');
+function scaffold_child_hook() {
+	do_action('scaffold_child_hook');
 }
-add_action( 'after_setup_theme', 'scaffold_child_init' );
+add_action( 'after_setup_theme', 'scaffold_child_hook' );
 
 /**
  * Enqueue scripts and styles.
