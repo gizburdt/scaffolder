@@ -3,7 +3,7 @@
 	<div class="content-wrap">
 		
 		<!-- #content -->
-		<div class="content">
+		<div class="content content-area">
 			
 			<header class="page-header">
 				<h1 class="page-title"><?php _e( "Oops! That page can't be found.", 'scaffold' ); ?></h1>

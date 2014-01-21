@@ -1,21 +1,20 @@
-		<div class="push"></div>
+	</div>
+	<!-- /site-content -->	
+
+	<div class="push"></div>
+
+</div>
+<!-- /site -->
+
+<footer class="site-footer">
+	<div class="footer-content">
+	
+		&copy; Copyright
 	
 	</div>
-	<!-- /wrapper -->
-	
-	<!-- #footer_wrap -->
-	<div class="footer-wrap">
-	
-		<div class="footer">
-		
-			&copy; Copyright
-		
-		</div>
-	
-	</div>
-	<!-- /footer_wrap -->
-	
-	<?php wp_footer(); ?>
+</footer>
+
+<?php wp_footer(); ?>
 
 </body>
 </html>

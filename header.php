@@ -16,29 +16,29 @@
 
 <body <?php body_class( get_theme_mod('scaffold_sidebar') ); ?>>
 	
-	<!-- BEGIN #wrapper -->
-	<div class="wrapper">
-		
-		<div class="header-wrap">
-			<div class="header">
-				
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo"></a>
-				
-				<?php 
-				
-					wp_nav_menu( array(
-						'theme_location'	=> 'primary-menu',
-						'container_class'	=> 'primary-menu-container menu-container',
-						'container_id'		=> 'primary-menu-container',
-						'items_wrap'      	=> '<ul id="%1$s" class="%2$s cleared">%3$s</ul>',
-						'depth'           	=> 0,
-						'walker'         	=> ''
-					) ); 
-					
-					// OR
-					// get_search_form(); 
-					
-				?>
-					
+<!-- .site -->
+<div class="site">
+	
+	<header class="site-header">
+		<nav class="navbar site-navigation">
+			<div class="navbar-header">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="navbar-brand logo"><?php get_bloginfo( 'name' ); ?></a>
+			    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#site-navigation">
+			      <span class="sr-only">Toggle navigation</span>
+			      <span class="icon-bar"></span>
+			      <span class="icon-bar"></span>
+			      <span class="icon-bar"></span>
+			    </button>
 			</div>
-		</div>
+			<?php wp_nav_menu( array(
+				'theme_location'	=> 'primary-menu',
+				'container_class'	=> 'collapse navbar-collapse',
+				'container_id'		=> 'site-navigation',
+				'items_wrap'      	=> '<ul id="%1$s" class="%2$s nav navbar-nav">%3$s</ul>',
+				'depth'           	=> 0
+			) ); ?>
+		</nav>
+	</header>
+	
+	<!-- .site-content -->
+	<div class="site-content">

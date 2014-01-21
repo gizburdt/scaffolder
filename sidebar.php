@@ -1,11 +1,7 @@
-<!-- BEGIN #sidebar_wrap -->
-<div class="sidebar-wrap">
-	
-	<div class="sidebar">
+<!-- .sidebar -->
+<div class="sidebar widget-area">
 		
-		This is the sidebar
+	This is the sidebar
 		
-	</div>
-	
 </div>
-<!-- END #sidebar_wrap -->
+<!-- /sidebar -->
