@@ -69,7 +69,7 @@ function scaffold_wp_title( $title, $sep )
 		$title = "$title $sep $site_description";
 
 	// Add a page number if necessary.
-	if ( $paged >= 2 || $page >= 2 )
+	if ( $paged >= 2 )
 		$title = "$title $sep " . sprintf( __( 'Page %s', 'twentyfourteen' ), max( $paged, $page ) );
 
 	return $title;
