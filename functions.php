@@ -40,9 +40,6 @@ function scaffold_setup()
 	add_theme_support( 'post-formats', array( /* 'aside', 'link', 'gallery', 'status', 'quote', 'image' */ ) );
 	add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list' ) );
 
-	// Image sizes	
-	// add_image_size( 'name', width, height, true );
-
 	// Editor
 	add_editor_style( 'assets/css/editor-style.css' );
 
