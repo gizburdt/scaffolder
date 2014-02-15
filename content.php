@@ -3,14 +3,13 @@
 		<h1 class="entry-title"><?php the_title(); ?></h1>
 	</header>
 
-	<?php if ( is_search() ) : // Only display Excerpts for Search ?>
+	<?php if ( is_search() ) : ?>
 		<div class="entry-summary">
 			<?php the_excerpt(); ?>
 		</div>
 	<?php else : ?>
 		<div class="entry-content">
-			<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', '_s' ) ); ?>
-			<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', '_s' ), 'after'  => '</div>', ) ); ?>
+			<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'scaffold' ) ); ?>
 		</div>
 	<?php endif; ?>
 </div>

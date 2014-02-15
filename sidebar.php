@@ -1,7 +1,11 @@
 <!-- .sidebar -->
-<div class="sidebar widget-area">
+<div class="site-sidebar widget-area">
+	
+	<div class="sidebar">
 		
-	This is the sidebar
+		This is the sidebar
+
+	</div>
 		
 </div>
 <!-- /sidebar -->
