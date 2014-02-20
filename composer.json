@@ -1,12 +1,5 @@
 {
     "name": 		                "gizburdt/scaffold",
     "type":                         "wordpress-theme",
-    "description": 	                "Scaffold a Wordpress theme",
-    "require": {
-        "composer/installers":      "~1.0"
-    },
-    "config": {
-        "component-dir": "vendor"
-    },
-    "repositories": []
+    "description": 	                "Scaffold a Wordpress theme"
 }
