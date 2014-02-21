@@ -1,8 +1,6 @@
 <?php get_header(); ?>
 
 	<div class="content-wrap">
-		
-		<!-- #content -->
 		<div class="content content-area">
 			
 			<header class="page-header">

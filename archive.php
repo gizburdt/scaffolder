@@ -1,9 +1,7 @@
 <?php get_header(); ?>
 
 	<div class="content-wrap">
-		
-		<!-- #content -->
-		<div class="content">
+		<div class="content content-area">
 
 			<?php if ( have_posts() ) : ?>
 
