@@ -114,7 +114,7 @@ function scaffold_register_scripts()
 {
 	// Vendor
 	wp_register_script( 'bootstrap', SCAFFOLD_VENDOR_URL . '/bootstrap/dist/js/bootstrap.min.js', array( 'jquery' ), '', true );
-	wp_register_script( 'html5shiv', SCAFFOLD_VENDOR_URL . '/html5shiv/dist/html5shiv.js', '', '', true );
+	wp_register_script( 'html5shiv', SCAFFOLD_VENDOR_URL . '/html5shiv/dist/html5shiv.min.js', '', '', true );
 	wp_register_script( 'modernizr', SCAFFOLD_VENDOR_URL . '/modernizr/modernizr.js', '', '', true );
 	wp_register_script( 'respond', SCAFFOLD_VENDOR_URL . '/respond/dest/respond.min.js', '', '', true );
 	wp_register_script( 'enquire', SCAFFOLD_VENDOR_URL . '/enquire/dist/enquire.min.js', '', '', true );
