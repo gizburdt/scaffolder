@@ -1,5 +1,5 @@
 {
-    "name": 		                "gizburdt/scaffold",
-    "type":                         "wordpress-theme",
-    "description": 	                "Scaffold a Wordpress theme"
+    "name": 		 "gizburdt/scaffold",
+    "type":          "wordpress-theme",
+    "description": 	 "Scaffold a Wordpress theme"
 }

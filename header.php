@@ -22,7 +22,7 @@
 	<header class="site-header">
 		<nav class="navbar site-navigation">
 			<div class="navbar-header">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="navbar-brand logo"><?php get_bloginfo( 'name' ); ?></a>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="navbar-brand logo"><?php bloginfo( 'name' ); ?></a>
 			    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#site-navigation">
 			      <span class="sr-only">Toggle navigation</span>
 			      <span class="icon-bar"></span>
