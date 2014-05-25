@@ -142,11 +142,7 @@ function scaffold_enqueue_scripts()
 /**
  * Allow automatic updates
  */
-function scaffold_automatic_updater( $checkout, $context ) 
-{
-	return false;
-}
-add_filter( 'automatic_updates_is_vcs_checkout', 'scaffold_automatic_updater', 10, 2 );
+add_filter( 'automatic_updates_is_vcs_checkout', '__return_false' );
 
 /**
  * All scaffold filters
