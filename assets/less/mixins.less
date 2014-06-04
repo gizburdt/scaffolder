@@ -12,6 +12,18 @@
 	&:before { content: @content; }
 }
 
+.make-glyphicon-after(@content) {
+	position: relative;
+	top: 1px;
+	display: inline-block;
+	font-family: 'Glyphicons Halflings';
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	&:after { content: @content; }
+}
+
 // Border radius
 .border-radius(@radius: @border-radius-base) {
 	.border-top-radius(@radius);
