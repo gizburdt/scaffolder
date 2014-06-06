@@ -11,3 +11,4 @@ components/*
 
 # Codekit
 codekit-config.json
+.codekit-cache
