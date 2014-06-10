@@ -1,6 +1,8 @@
 // 
 // Glyphicons
 .make-glyphicon(@content) {
+	position: relative;
+	display: inline-block;
 	&:before { 
 		content: @content;
 		position: relative;
@@ -15,6 +17,8 @@
 }
 
 .make-glyphicon-after(@content) {
+	position: relative;
+	display: inline-block;
 	&:after { 
 		content: @content;
 		position: relative;
