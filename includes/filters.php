@@ -95,28 +95,6 @@ function scaffold_add_extra_menu_classes( $objects )
 add_filter( 'wp_nav_menu_objects', 	'scaffold_add_extra_menu_classes' );
 
 /**
- * Mail from (mail)
- */
-function scaffold_new_mail_from( $email ) 
-{
-    $email = get_bloginfo( 'admin_email' );
- 
-    return $email;
-}	
-add_filter( 'wp_mail_from', 'scaffold_new_mail_from' );
-
-/**
- * Mail from (name)
- */
-function scaffold_new_mail_from_name( $name ) 
-{
-    $name = get_bloginfo( 'name' );
- 
-    return $name;
-}
-add_filter( 'wp_mail_from_name', 'scaffold_new_mail_from_name' );
-
-/**
  * Add favicon
  */
 function scaffold_favicon()
