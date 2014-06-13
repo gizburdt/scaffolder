@@ -1,6 +1,6 @@
 <div class="no-results not-found">
 	<header class="page-header">
-		<h2 class="page-title"><?php _e( 'Nothing Found', 'scaffold' ); ?></h2>
+		<h1 class="page-title"><?php _e( 'Nothing Found', 'scaffold' ); ?></h1>
 	</header>
 
 	<div class="page-content">
