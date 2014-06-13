@@ -3,15 +3,19 @@
 	<div class="content-wrap">
 		<div class="content content-area">
 
-			<?php while ( have_posts() ) : the_post(); ?>
-
+			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+				
 				<?php get_template_part( 'content', 'page' ); ?>
-
-			<?php endwhile; ?>
+				
+			<?php endwhile; endif; ?>
 
 		</div>
 
-		<?php get_sidebar(); ?>
+		<div class="site-sidebar widget-area">
+
+			<?php get_sidebar(); ?>
+
+		</div>
 	</div>	
 
 <?php get_footer(); ?>

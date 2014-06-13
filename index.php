@@ -10,10 +10,12 @@
 			<?php endwhile; endif; ?>
 			
 		</div>
-		<!-- /content -->
 		
-		<?php get_sidebar(); ?>
-		
+		<div class="site-sidebar widget-area">
+			
+			<?php get_sidebar(); ?>
+
+		</div>
 	</div>
 	
 <?php get_footer(); ?>
