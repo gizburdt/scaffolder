@@ -6,8 +6,7 @@
 
 # Composer
 composer.lock
-vendor/*
-components/*
+vendor/
 
 # Codekit
 codekit-config.json
