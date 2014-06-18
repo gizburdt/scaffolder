@@ -92,7 +92,7 @@ add_action( 'init', 'scaffold_styles_scripts' );
 function scaffold_register_styles()
 {
 	// Vendor
-	wp_register_style( 'fancybox', SCAFFOLD_VENDOR_URL . '/fancybox/source/jquery.fancybox.css', '', '', 'screen' );
+	wp_register_style( 'jquery-fancybox', SCAFFOLD_VENDOR_URL . '/fancybox/source/jquery.fancybox.css', '', '', 'screen' );
 	
 	// Theme
 	wp_register_style( 'style', get_stylesheet_directory_uri() . '/style.css', '', '', 'screen' );
@@ -103,7 +103,7 @@ function scaffold_register_styles()
  */
 function scaffold_enqueue_styles()
 {
-	wp_enqueue_style( 'fancybox' );
+	wp_enqueue_style( 'jquery-fancybox' );
 	wp_enqueue_style( 'style' );
 }
 
