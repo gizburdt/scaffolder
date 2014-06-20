@@ -139,8 +139,9 @@ function scaffold_enqueue_scripts()
 	wp_enqueue_script( 'jquery-bxslider' );
 	wp_enqueue_script( 'jquery-fancybox' );
 
-	if ( is_singular() && get_option( 'thread_comments' ) ) 
+	if ( is_singular() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
+	}
 }
 
 /**
