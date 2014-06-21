@@ -1,7 +1,7 @@
 <!-- .sidebar -->
 <div class="sidebar">
-
-	<?php dynamic_sidebar( 'sidebar' ); ?>
-		
+	<ul>
+		<?php dynamic_sidebar( 'sidebar' ); ?>
+	</ul>
 </div>
 <!-- /sidebar -->
