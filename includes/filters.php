@@ -22,20 +22,22 @@ function scaffold_body_class( $classes )
     elseif( $is_IE )		$classes[] = 'ie';  
     else               		$classes[] = 'unknown-browser';
 
-    if( is_singular() )
-    {
+    if( is_singular() ) {
     	global $post;
-        foreach( ( get_the_category( $post->ID ) ) as $category ) 
+        foreach( ( get_the_category( $post->ID ) ) as $category ) {
             $classes[] = 'term-' . $category->category_nicename;
+        }
 
         $classes[] = 'singular';
     }
 
-    if( is_multi_author() ) 
+    if( is_multi_author() ) {
 		$classes[] = 'group-blog';
+    }
 
-	if( is_archive() || is_search() || is_home() )
+	if( is_archive() || is_search() || is_home() ) {
 		$classes[] = 'list-view';
+    }
 
     return $classes;  
 }
@@ -63,20 +65,23 @@ function scaffold_wp_title( $title, $sep )
 {
 	global $paged, $page;
 
-	if ( is_feed() )
+	if ( is_feed() ) {
 		return $title;
+    }
 
 	// Add the site name.
 	$title .= get_bloginfo( 'name' );
 
 	// Add the site description for the home/front page.
 	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
+	if ( $site_description && ( is_home() || is_front_page() ) ) {
 		$title = "$title $sep $site_description";
+    }
 
 	// Add a page number if necessary.
-	if ( $paged >= 2 )
+	if ( $paged >= 2 ) {
 		$title = "$title $sep " . sprintf( __( 'Page %s', 'twentyfourteen' ), max( $paged, $page ) );
+    }
 
 	return $title;
 }
