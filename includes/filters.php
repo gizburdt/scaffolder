@@ -13,7 +13,6 @@ add_filter( 'widget_text', 'do_shortcode' );
  */
 function scaffold_body_class( $classes ) 
 {
-    global $, $is_gecko, $is_IE, $is_opera, $is_NS4, $is_safari, $is_chrome, $is_iphone;
     global $is_gecko, $is_IE, $is_opera, $is_safari, $is_chrome;  
 
     if( $is_gecko )      	$classes[] = 'gecko';  
