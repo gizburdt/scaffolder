@@ -107,7 +107,7 @@ add_filter( 'wp_nav_menu_objects', 	'scaffold_add_extra_menu_classes' );
  */
 function scaffold_favicon()
 {
-    echo '<link rel="shortcut icon" href="' . get_stylesheet_directory_uri() . '/assets/images/favicon.ico" type="image/x-icon">';
+    echo '<link rel="shortcut icon" type="image/png" href="' . get_stylesheet_directory_uri() . '/assets/images/favicon.png">';
 }
 add_action( 'wp_head', 'scaffold_favicon' );
 
