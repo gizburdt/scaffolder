@@ -1,5 +1,5 @@
 {
-    "name": "gizburdt/wordpress-scaffold",
+    "name": "gizburdt/wp-scaffold",
     "version": "0.1",
     "dependencies": {
         "fancybox":         "latest",
