@@ -8,6 +8,9 @@
 composer.lock
 vendor/
 
+# Node
+node_modules
+
 # Codekit
 codekit-config.json
 .codekit-cache
