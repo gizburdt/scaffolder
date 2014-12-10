@@ -97,7 +97,7 @@ function scaffold_register_styles()
 	wp_register_style( 'jquery-bxslider', SCAFFOLD_VENDOR_URL . '/bxslider-4/jquery.bxslider.css', '', '', 'screen' );
 	
 	// Theme
-	wp_register_style( 'style', get_stylesheet_directory_uri() . '/style.css' );
+	wp_register_style( 'style', get_stylesheet_directory_uri() . '/style.css', '', '', 'screen' );
 }
 
 /**
