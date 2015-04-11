@@ -94,7 +94,7 @@ function scaffold_register_styles()
 {
 	// Vendor
 	wp_register_style( 'jquery-fancybox', SCAFFOLD_VENDOR_URL . '/fancybox/source/jquery.fancybox.css', '', '', 'screen' );
-	wp_register_style( 'jquery-bxslider', SCAFFOLD_VENDOR_URL . '/bxslider-4/jquery.bxslider.css', '', '', 'screen' );
+	wp_register_style( 'jquery-bxslider', SCAFFOLD_VENDOR_URL . '/bxslider-4/dist/jquery.bxslider.css', '', '', 'screen' );
 	
 	// Theme
 	wp_register_style( 'style', get_stylesheet_directory_uri() . '/style.css', '', '', 'screen' );
@@ -122,7 +122,7 @@ function scaffold_register_scripts()
 	wp_register_script( 'respond', SCAFFOLD_VENDOR_URL . '/respond/dest/respond.min.js', '', '', true );
 	wp_register_script( 'enquire', SCAFFOLD_VENDOR_URL . '/enquire/dist/enquire.min.js', '', '', true );
 	wp_register_script( 'jquery-caroufredsel', SCAFFOLD_VENDOR_URL . '/carouFredSel/jquery.carouFredSel-6.2.1-packed.js', array( 'jquery' ), '', true);
-	wp_register_script( 'jquery-bxslider', SCAFFOLD_VENDOR_URL . '/bxslider-4/jquery.bxslider.min.js', array( 'jquery' ), '', true);
+	wp_register_script( 'jquery-bxslider', SCAFFOLD_VENDOR_URL . '/bxslider-4/dist/jquery.bxslider.min.js', array( 'jquery' ), '', true);
 	wp_register_script( 'jquery-fancybox', SCAFFOLD_VENDOR_URL . '/fancybox/source/jquery.fancybox.pack.js', array( 'jquery' ), '', true);
 }
 
