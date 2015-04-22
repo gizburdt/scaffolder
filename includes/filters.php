@@ -67,7 +67,7 @@ add_action( 'init', 'scaffold_cleanup_head' );
 function scaffold_add_extra_menu_classes( $objects ) 
 {
     $objects[1]->classes[] = 'first';
-    $objects[count( $objects )]->classes[] = 'last';
+    $objects[count($objects)]->classes[] = 'last';
 
     return $objects;
 }
@@ -78,7 +78,9 @@ add_filter( 'wp_nav_menu_objects', 	'scaffold_add_extra_menu_classes' );
  */
 function scaffold_favicon()
 {
-    echo '<link rel="shortcut icon" type="image/png" href="' . get_stylesheet_directory_uri() . '/assets/images/favicon.png">';
+    if(file_exists(get_stylesheet_directory() . '/assets/images/favicon.png')) {
+        echo '<link rel="shortcut icon" type="image/png" href="' . get_stylesheet_directory_uri() . '/assets/images/favicon.png">';
+    }
 }
 add_action( 'wp_head', 'scaffold_favicon' );
 
