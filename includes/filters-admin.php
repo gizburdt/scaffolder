@@ -24,7 +24,9 @@ add_filter( 'user_contactmethods', 'scaffold_edit_contactmethods' );
  */
 function scaffold_enable_more_buttons( $buttons ) 
 {
-	$buttons[] = 'hr';
+    if( ! in_array('hr', $buttons)) {
+        $buttons[] = 'hr';
+    }
 
 	return $buttons;
 }
@@ -37,22 +39,4 @@ function scaffold_remove_menu_pages()
 {
 	remove_menu_page( 'link-manager.php' );
 }
-add_action( 'admin_menu', 			'scaffold_remove_menu_pages' );
-		
-/**
- * Remove dashboard widgets
- */
-function scaffold_remove_dashboard_widgets() 
-{
-	global $wp_meta_boxes;
-
-	unset( $wp_meta_boxes['dashboard']['normal']['core']['dashboard_incoming_links'] );
-	unset( $wp_meta_boxes['dashboard']['normal']['core']['dashboard_plugins'] );
-	unset( $wp_meta_boxes['dashboard']['side']['core']['dashboard_recent_drafts'] );
-	unset( $wp_meta_boxes['dashboard']['normal']['core']['dashboard_recent_comments'] );
-	unset( $wp_meta_boxes['dashboard']['side']['core']['dashboard_primary'] );
-	unset( $wp_meta_boxes['dashboard']['side']['core']['dashboard_secondary'] );
-	// unset( $wp_meta_boxes['dashboard']['side']['core']['dashboard_right_now'] );
-	// unset( $wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press'] );
-}
-add_action( 'wp_dashboard_setup', 	'scaffold_remove_dashboard_widgets' );
+add_action( 'admin_menu', 'scaffold_remove_menu_pages' );
