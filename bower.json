@@ -2,16 +2,14 @@
     "name": "gizburdt/wp-scaffold",
     "version": "0.1",
     "dependencies": {
-        "fancybox":         "latest",
-        "respond":          "latest",
-        "enquire":          "latest",
-        "carouFredSel":     "latest",
-        "modernizr":        "latest",
-        "chosen":           "latest",
-        "fitvids":          "latest",
-        "html5shiv":        "latest",
-        "bxslider-4":       "latest",
-        "bootstrap":        ">=3.2.0"
+        "bootstrap":    "3.*",
+        "html5shiv":    "3.7.*",
+        "modernizr":    "2.8.*",
+        "respond":      "1.4.*",
+        "enquire":      "2.1.*",
+        "bxslider-4":   "4.2.*",
+        "fitvids":      "1.1.*",
+        "fancybox":     "2.1.*"
     },
     "private": "true"
 }

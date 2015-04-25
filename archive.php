@@ -6,19 +6,11 @@
 
 				<header class="page-header">
 					<h1 class="page-title">
-						<?php
-							if ( is_day() ) :
-								printf( __( 'Day: %s', 'scaffold' ), get_the_date() );
-							elseif ( is_month() ) :
-								printf( __( 'Month: %s', 'scaffold' ), get_the_date( 'F Y' ) );
-							elseif ( is_year() ) :
-								printf( __( 'Year: %s', 'scaffold' ), get_the_date( 'Y' ) );
-							else :
-								_e( 'Archives', 'scaffold' );
-							endif;
-						?>
+						<?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
 					</h1>
 				</header>
+
+                <?php the_archive_description( '<div class="page-description">', '</div>' ); ?>
 
 				<?php while ( have_posts() ) : the_post(); ?>
 				
@@ -26,7 +18,7 @@
 
 				<?php endwhile; ?>
 
-				<?php scaffold_paging_nav(); ?>
+				<?php the_posts_pagination(); ?>
 
 			<?php else : ?>
 
