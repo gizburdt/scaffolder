@@ -1,4 +1,4 @@
-// 
+
 // Glyphicons
 .make-glyphicon(@content) {
 	position: relative;
@@ -44,45 +44,3 @@
 	-webkit-box-shadow: @shadow;
 	box-shadow: @shadow;
 }
-
-// Smooth hover fade
-.hover-fade(@duration: @smooth-hover-duration) {
-	transition-property: background;
-	transition-duration: @duration;
-	transition-timing-function: linear;
-}
-
-// Horizontal gradient
-.horizontal-gradient(@start-color, @end-color, @start-alpha: 1, @end-alpha: 1) {
-	@start-rgba: 	rgba( red(@start-color), green(@start-color), blue(@start-color), @start-alpha);
-	@end-rgba: 		rgba( red(@end-color), green(@end-color), blue(@end-color), @end-alpha);
-	@start-argb: 	argb(@start-rgba);
-	@end-argb: 		argb(@end-rgba);
-
-	background: @start-color; 
-	background: -webkit-gradient(linear, left top, right top, 0 0, 0 100%, from(@start-rgba), to(@end-rgba));
-	background: -webkit-linear-gradient(left, @start-rgba 0%, @end-rgba 100%);
-	background: -moz-linear-gradient(left, @start-rgba 0%, @end-rgba 100%);
-	background: -ms-linear-gradient(left, @start-rgba 0%, @end-rgba 100%);
-	background: -o-linear-gradient(left, @start-rgba 0%, @end-rgba 100%);
-	background: linear-gradient(to right, @start-rgba 0%, @end-rgba 100%); 
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=@start-argb, endColorstr=@end-argb,GradientType=0 ); /* IE6-9 */
-}
-
-// Vertical gradient
-.vertical-gradient(@start-color, @end-color, @start-alpha: 1, @end-alpha: 1) {
-	@start-rgba: 	rgba( red(@start-color), green(@start-color), blue(@start-color), @start-alpha);
-	@end-rgba: 		rgba( red(@end-color), green(@end-color), blue(@end-color), @end-alpha);
-	@start-argb: 	argb(@start-rgba);
-	@end-argb: 		argb(@end-rgba);
-
-	background: @start-color; 
-	background: -webkit-gradient(linear, 0 0, 0 100%, from(@start-rgba), to(@end-rgba));
-	background: -webkit-linear-gradient(@start-rgba 0%, @end-rgba 100%);
-	background: -moz-linear-gradient(@start-rgba 0%, @end-rgba 100%);
-	background: -o-linear-gradient(@start-rgba 0%, @end-rgba 100%);
-	background: -ms-linear-gradient(@start-rgba 0%, @end-rgba 100%);
-	background: linear-gradient(@start-rgba 0%, @end-rgba 100%); 
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=@start-argb, endColorstr=@end-argb,GradientType=0 );
-}
-
