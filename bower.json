@@ -1,5 +1,5 @@
 {
-    "name": "gizburdt/wp-scaffold",
+    "name": "gizburdt/scaffolder",
     "version": "0.1",
     "dependencies": {
         "bootstrap":    "3.*",
