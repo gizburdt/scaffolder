@@ -1,19 +1,20 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Scaffold\n"
-"POT-Creation-Date: 2014-06-22 19:23+0100\n"
-"PO-Revision-Date: 2014-06-22 19:23+0100\n"
+"Project-Id-Version: Scaffolder\n"
+"POT-Creation-Date: 2015-04-29 17:12+0100\n"
+"PO-Revision-Date: 2015-04-29 17:13+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: nl_NL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.5\n"
+"X-Generator: Poedit 1.7.6\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;\\r_ex:1,2c\n"
 "X-Poedit-SearchPath-0: ..\n"
+"X-Poedit-SearchPathExcluded-0: ../assets\n"
 
 #: ../404.php:7
 msgid "Oops! That page can't be found."
@@ -23,50 +24,14 @@ msgstr "Oeps! De pagina kan niet worden gevonden."
 msgid "It looks like nothing was found at this location. Maybe try a search?"
 msgstr "Het lijkt er op dat er niks gevonden kan worden. Misschien zoeken?"
 
-#: ../archive.php:11
-#, php-format
-msgid "Day: %s"
-msgstr "Dag: %s"
-
-#: ../archive.php:13
-#, php-format
-msgid "Month: %s"
-msgstr "Maand: %s"
-
-#: ../archive.php:15
-#, php-format
-msgid "Year: %s"
-msgstr "Jaar: %s"
-
-#: ../archive.php:17
-msgid "Archives"
-msgstr "Archief"
-
-#: ../author.php:11
-#, php-format
-msgid "All posts by %s"
-msgstr "Alle berichten van %s"
-
 #: ../comments.php:12
 #, php-format
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Één reactie op &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s reacites op &ldquo;%2$s&rdquo;"
 
-#: ../comments.php:19 ../comments.php:37
-msgid "Comment navigation"
-msgstr "Reactie navigatie"
-
-#: ../comments.php:20 ../comments.php:38
-msgid "&larr; Older Comments"
-msgstr "&larr; Oudere reacties"
-
-#: ../comments.php:21 ../comments.php:39
-msgid "Newer Comments &rarr;"
-msgstr "Nieuwere reacties &rarr;"
-
-#: ../comments.php:44
+#: ../comments.php:32
 msgid "Comments are closed."
 msgstr "Reacties zijn gesloten"
 
@@ -80,38 +45,45 @@ msgid ""
 "different keywords."
 msgstr ""
 
-#: ../content-none.php:14
+#: ../content-none.php:11
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
 
-#: ../content.php:9
+#: ../content.php:10
 msgid "Read more"
 msgstr "Lees meer"
 
-#: ../content.php:13
+#: ../content.php:16
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Lees verder <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../functions.php:58
-msgid "Primary"
-msgstr "Primaire"
-
 #: ../functions.php:59
-msgid "Secondary"
-msgstr "Secundaire"
+msgid "Primary menu"
+msgstr "Primaire menu"
 
 #: ../functions.php:60
-msgid "Footer"
-msgstr "Footer"
+msgid "Secondary menu"
+msgstr "Secondaire menu"
 
-#: ../includes/filters.php:83
-#, php-format
-msgid "Page %s"
-msgstr "Pagina %s"
+#: ../functions.php:61
+msgid "Footer menu"
+msgstr "Footer menu"
 
-#: ../search.php:8
+#: ../includes/helpers.php:13
+msgid "Comment navigation"
+msgstr "Reactie navigatie"
+
+#: ../includes/helpers.php:14
+msgid "&larr; Older Comments"
+msgstr "&larr; Oudere reacties"
+
+#: ../includes/helpers.php:15
+msgid "Newer Comments &rarr;"
+msgstr "Nieuwere reacties &rarr;"
+
+#: ../search.php:9
 #, php-format
 msgid "Search Results for: %s"
 msgstr "Zoekresultaten voor: %s"
@@ -119,3 +91,30 @@ msgstr "Zoekresultaten voor: %s"
 #: ../searchform.php:2 ../searchform.php:4
 msgid "Search"
 msgstr "Zoeken"
+
+#~ msgid "Day: %s"
+#~ msgstr "Dag: %s"
+
+#~ msgid "Month: %s"
+#~ msgstr "Maand: %s"
+
+#~ msgid "Year: %s"
+#~ msgstr "Jaar: %s"
+
+#~ msgid "Archives"
+#~ msgstr "Archief"
+
+#~ msgid "All posts by %s"
+#~ msgstr "Alle berichten van %s"
+
+#~ msgid "Primary"
+#~ msgstr "Primaire"
+
+#~ msgid "Secondary"
+#~ msgstr "Secundaire"
+
+#~ msgid "Footer"
+#~ msgstr "Footer"
+
+#~ msgid "Page %s"
+#~ msgstr "Pagina %s"
