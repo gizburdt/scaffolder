@@ -123,7 +123,7 @@ function scaffold_register_scripts()
 	wp_register_script( 'enquire', SCAFFOLD_VENDOR_URL . '/enquire/dist/enquire.min.js', '', '', true );
 	wp_register_script( 'jquery-bxslider', SCAFFOLD_VENDOR_URL . '/bxslider-4/dist/jquery.bxslider.min.js', array( 'jquery' ), '', true);
 	wp_register_script( 'jquery-fancybox', SCAFFOLD_VENDOR_URL . '/fancybox/source/jquery.fancybox.pack.js', array( 'jquery' ), '', true);
-    wp_register_script( 'jquery-fitvids', SCAFFOLD_VENDOR_URL . '/fitvids/jquery.fitvids.pack.js', array( 'jquery' ), '', true);
+    wp_register_script( 'jquery-fitvids', SCAFFOLD_VENDOR_URL . '/fitvids/jquery.fitvids.js', array( 'jquery' ), '', true);
 }
 
 /**

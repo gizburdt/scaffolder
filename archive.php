@@ -2,6 +2,7 @@
 
 	<div class="content-wrap">
 		<div class="content content-area">
+
 			<?php if ( have_posts() ) : ?>
 
 				<header class="page-header">
@@ -25,6 +26,7 @@
 				<?php get_template_part( 'content', 'none' ); ?>
 
 			<?php endif; ?>
+
 		</div>
 	</div>
 

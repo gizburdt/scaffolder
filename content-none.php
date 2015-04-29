@@ -4,6 +4,7 @@
 	</header>
 
 	<div class="page-content">
+
 		<?php if( is_search() ) : ?>
 			<p><?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'scaffold' ); ?></p>
 		<?php else : ?>
@@ -11,5 +12,6 @@
 		<?php endif; ?>
 
         <?php get_search_form(); ?>
+
 	</div>
 </div>

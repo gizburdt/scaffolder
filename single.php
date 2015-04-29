@@ -2,7 +2,8 @@
 
 	<div class="content-wrap">
 		<div class="content content-area">
-			<?php while ( have_posts() ) : the_post(); ?>
+
+            <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
 				<?php get_template_part( 'content', 'single' ); ?>
 
@@ -12,7 +13,8 @@
 					endif;
 				?>
 
-			<?php endwhile; ?>
+            <?php endwhile; endif; ?>
+
 		</div>
 
 		<div class="site-sidebar widget-area">
@@ -21,6 +23,5 @@
 
 		</div>
 	</div>
-
 
 <?php get_footer(); ?>
