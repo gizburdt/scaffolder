@@ -1,8 +1,7 @@
 # Crap
 .DS_Store
-*.tmproj
-*.sublime-project
-*.sublime-workspace
+.log
+/*.zip
 
 # Composer
 composer.lock
@@ -14,3 +13,11 @@ node_modules
 # Codekit
 codekit-config.json
 .codekit-cache
+
+# Editors
+*.sublime-project
+*.sublime-workspace
+*.idea
+.idea
+.idea/*
+*.tar.gz
