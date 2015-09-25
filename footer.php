@@ -1,17 +1,17 @@
-	</div>
-	<!-- /site-content -->	
+    </div>
+    <!-- /site-content -->
 
-	<div class="push"></div>
+    <div class="push"></div>
 
 </div>
 <!-- /site -->
 
 <footer class="site-footer">
-	<div class="footer-content">
-	
-		&copy; Copyright
-	
-	</div>
+    <div class="footer-content">
+
+        &copy; Copyright
+
+    </div>
 </footer>
 
 <?php wp_footer(); ?>

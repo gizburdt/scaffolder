@@ -11,11 +11,11 @@ if( ! is_admin() ) return;
  */
 function scaffolder_edit_contactmethods( $methods )
 {
-	unset( $methods['aim'] );
-	unset( $methods['jabber'] );
-	unset( $methods['yim'] );
+    unset( $methods['aim'] );
+    unset( $methods['jabber'] );
+    unset( $methods['yim'] );
 
-	return $methods;
+    return $methods;
 }
 add_filter( 'user_contactmethods', 'scaffolder_edit_contactmethods' );
 
@@ -28,7 +28,7 @@ function scaffolder_enable_more_buttons( $buttons )
         $buttons[] = 'hr';
     }
 
-	return $buttons;
+    return $buttons;
 }
 add_filter( 'mce_buttons', 'scaffolder_enable_more_buttons' );
 
@@ -37,6 +37,6 @@ add_filter( 'mce_buttons', 'scaffolder_enable_more_buttons' );
  */
 function scaffolder_remove_menu_pages()
 {
-	remove_menu_page( 'link-manager.php' );
+    remove_menu_page( 'link-manager.php' );
 }
 add_action( 'admin_menu', 'scaffolder_remove_menu_pages' );

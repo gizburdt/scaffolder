@@ -15,18 +15,18 @@ function scaffolder_body_class( $classes )
 {
     global $is_gecko, $is_IE, $is_opera, $is_safari, $is_chrome, $is_NS4, $is_lynx, $is_iphone;
 
-    if( $is_gecko )      	$classes[] = 'gecko';
-    elseif( $is_opera )  	$classes[] = 'opera';
-    elseif( $is_safari )	$classes[] = 'safari';
+    if( $is_gecko )         $classes[] = 'gecko';
+    elseif( $is_opera )     $classes[] = 'opera';
+    elseif( $is_safari )    $classes[] = 'safari';
     elseif( $is_lynx )      $classes[] = 'lynx';
-    elseif( $is_chrome )	$classes[] = 'chrome';
+    elseif( $is_chrome )    $classes[] = 'chrome';
     elseif( $is_NS4 )       $classes[] = 'ns4';
-    elseif( $is_IE )		$classes[] = 'ie';
-    else               		$classes[] = 'unknown-browser';
+    elseif( $is_IE )        $classes[] = 'ie';
+    else                    $classes[] = 'unknown-browser';
     if( $is_iphone )        $classes[] = 'iphone';
 
     if( is_singular() ) {
-    	global $post;
+        global $post;
         foreach( ( get_the_category( $post->ID ) ) as $category ) {
             $classes[] = 'term-' . $category->category_nicename;
         }
@@ -35,11 +35,11 @@ function scaffolder_body_class( $classes )
     }
 
     if( is_multi_author() ) {
-		$classes[] = 'multi-author';
+        $classes[] = 'multi-author';
     }
 
-	if( is_archive() || is_search() || is_home() ) {
-		$classes[] = 'list-view';
+    if( is_archive() || is_search() || is_home() ) {
+        $classes[] = 'list-view';
     }
 
     return $classes;
@@ -71,7 +71,7 @@ function scaffolder_add_extra_menu_classes( $objects )
 
     return $objects;
 }
-add_filter( 'wp_nav_menu_objects', 	'scaffolder_add_extra_menu_classes' );
+add_filter( 'wp_nav_menu_objects',  'scaffolder_add_extra_menu_classes' );
 
 /**
  * Add favicon
