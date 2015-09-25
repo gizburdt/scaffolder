@@ -6,7 +6,7 @@ if( ! defined( 'ABSPATH' ) ) exit;
 /**
  * Comments nav
  */
-function scaffold_comment_nav()
+function scaffolder_comment_nav()
 {
     if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
         <nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
@@ -29,7 +29,7 @@ function scaffold_comment_nav()
  *
  * @see array_insert_after()
  */
-function array_insert_before( $key, array &$array, $new_key, $new_value ) 
+function array_insert_before( $key, array &$array, $new_key, $new_value )
 {
     if (array_key_exists($key, $array)) {
         $new = array();
@@ -37,7 +37,7 @@ function array_insert_before( $key, array &$array, $new_key, $new_value )
             if ($k === $key) {
                 $new[$new_key] = $new_value;
             }
-        
+
             $new[$k] = $value;
         }
         return $new;
@@ -58,7 +58,7 @@ function array_insert_before( $key, array &$array, $new_key, $new_value )
  *
  * @see array_insert_before()
  */
-function array_insert_after( $key, array &$array, $new_key, $new_value ) 
+function array_insert_after( $key, array &$array, $new_key, $new_value )
 {
     if (array_key_exists($key, $array)) {
         $new = array();
@@ -70,7 +70,7 @@ function array_insert_after( $key, array &$array, $new_key, $new_value )
         }
         return $new;
     }
-    
+
     return false;
 }
 
@@ -81,19 +81,19 @@ function array_insert_after( $key, array &$array, $new_key, $new_value )
  *
  * @return The new array
  */
-function array_flatten( $array ) 
-{ 
-    if( ! is_array( $array ) ) { 
-        return false; 
-    } 
+function array_flatten( $array )
+{
+    if( ! is_array( $array ) ) {
+        return false;
+    }
 
-    $result = array(); 
-    foreach( $array as $key => $value ) { 
-        if( is_array( $value ) ) { 
-            $result = array_merge($result, array_flatten($value)); 
-        } else { 
-            $result[$key] = $value; 
-        } 
-    } 
-    return $result; 
+    $result = array();
+    foreach( $array as $key => $value ) {
+        if( is_array( $value ) ) {
+            $result = array_merge($result, array_flatten($value));
+        } else {
+            $result[$key] = $value;
+        }
+    }
+    return $result;
 }

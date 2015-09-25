@@ -1,4 +1,4 @@
-<?php 
+<?php
 	if ( post_password_required() ) {
 		return;
 	}
@@ -14,7 +14,7 @@
 			?>
 		</h2>
 
-		<?php scaffold_comment_nav(); ?>
+		<?php scaffolder_comment_nav(); ?>
 
 		<ol class="comment-list">
 			<?php
@@ -26,7 +26,7 @@
 			?>
 		</ol>
 
-        <?php scaffold_comment_nav(); ?>
+        <?php scaffolder_comment_nav(); ?>
 
 		<?php if ( ! comments_open() ) : ?>
 			<p class="no-comments"><?php _e( 'Comments are closed.', 'scaffold' ); ?></p>
