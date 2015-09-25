@@ -1,46 +1,13 @@
 
-// Glyphicons
-.make-glyphicon(@content) {
-    position: relative;
-    display: inline-block;
-    &:before {
-        content: @content;
-        position: relative;
-        top: 1px;
-        display: inline-block;
-        font-family: 'Glyphicons Halflings';
-        font-style: normal;
-        font-weight: normal;
-        line-height: 1;
-        -webkit-font-smoothing: antialiased;
-    }
-}
-
-.make-glyphicon-after(@content) {
-    position: relative;
-    display: inline-block;
-    &:after {
-        content: @content;
-        position: relative;
-        top: 1px;
-        display: inline-block;
-        font-family: 'Glyphicons Halflings';
-        font-style: normal;
-        font-weight: normal;
-        line-height: 1;
-        -webkit-font-smoothing: antialiased;
-    }
-}
-
 // Border radius
-.border-radius(@radius: @border-radius-base) {
-    .border-top-radius(@radius);
-    .border-bottom-radius(@radius);
-    border-radius: @radius;
+@mixin border-radius($radius: $border-radius-base) {
+    @include border-top-radius($radius);
+    @include border-bottom-radius($radius);
+    border-radius: $radius;
 }
 
 // Box shadow
-.box-shadow(@shadow) {
-    -webkit-box-shadow: @shadow;
-    box-shadow: @shadow;
+@mixin box-shadow($shadow) {
+    -webkit-box-shadow: $shadow;
+    box-shadow: $shadow;
 }
