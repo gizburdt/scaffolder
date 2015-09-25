@@ -95,7 +95,7 @@ function scaffold_register_styles()
 	// Vendor
 	wp_register_style( 'jquery-fancybox', SCAFFOLD_VENDOR_URL . '/fancybox/source/jquery.fancybox.css', '', '', 'screen' );
 	wp_register_style( 'jquery-bxslider', SCAFFOLD_VENDOR_URL . '/bxslider-4/dist/jquery.bxslider.css', '', '', 'screen' );
-	
+
 	// Theme
 	wp_register_style( 'style', get_stylesheet_directory_uri() . '/style.css', '', '', 'screen' );
 }
@@ -113,7 +113,7 @@ function scaffold_enqueue_styles()
 /**
  * Register scripts
  */
-function scaffold_register_scripts() 
+function scaffold_register_scripts()
 {
 	// Vendor
 	wp_register_script( 'bootstrap', SCAFFOLD_VENDOR_URL . '/bootstrap/dist/js/bootstrap.min.js', array( 'jquery' ), '', true );
