@@ -2,14 +2,14 @@
     "name": "gizburdt/scaffolder",
     "version": "0.1",
     "dependencies": {
-        "bootstrap":    "3.*",
-        "html5shiv":    "3.7.*",
-        "modernizr":    "2.8.*",
-        "respond":      "1.4.*",
-        "enquire":      "2.1.*",
-        "bxslider-4":   "4.2.*",
-        "fitvids":      "1.1.*",
-        "fancybox":     "2.1.*"
+        "bootstrap-sass":   "3.*",
+        "html5shiv":        "3.*",
+        "modernizr":        "3.*",
+        "respond":          "1.*",
+        "enquire":          "2.*",
+        "bxslider-4":       "4.*",
+        "fitvids":          "1.*",
+        "fancybox":         "2.*"
     },
     "private": "true"
 }
