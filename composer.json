@@ -1,7 +1,7 @@
 {
     "name": "gizburdt/scaffolder",
     "type": "wordpress-theme",
-    "description": "Scaffold a Wordpress theme",
+    "description": "A structure for Wordpress themes",
     "require": {
         "composer/installers": "~1.0"
     }
