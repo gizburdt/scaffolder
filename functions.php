@@ -29,7 +29,7 @@ if( ! defined( 'CUZTOM_URL' ) ) {
 }
 
 // Scaffold setup
-if( ! function_exists( 'scaffold_setup' ) ) :
+if( ! function_exists( 'scaffolder_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -37,7 +37,7 @@ if( ! function_exists( 'scaffold_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function scaffold_setup()
+function scaffolder_setup()
 {
     // Textdomain
     load_theme_textdomain( 'scaffold', get_template_directory() . '/languages' );
@@ -62,35 +62,35 @@ function scaffold_setup()
     ) );
 }
 endif;
-add_action( 'after_setup_theme', 'scaffold_setup' );
+add_action( 'after_setup_theme', 'scaffolder_setup' );
 
 /**
  * Init for Scaffold Child
  */
-function scaffold_child_init() {
-    do_action( 'scaffold_child_init' );
+function scaffolder_child_init() {
+    do_action( 'scaffolder_child_init' );
 }
-add_action( 'after_setup_theme', 'scaffold_child_init' );
+add_action( 'after_setup_theme', 'scaffolder_child_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function scaffold_styles_scripts()
+function scaffolder_styles_scripts()
 {
     // Styles
-    add_action( 'wp_enqueue_scripts',   'scaffold_register_styles' );
-    add_action( 'wp_enqueue_scripts',   'scaffold_enqueue_styles' );
+    add_action( 'wp_enqueue_scripts',   'scaffolder_register_styles' );
+    add_action( 'wp_enqueue_scripts',   'scaffolder_enqueue_styles' );
 
     // Scripts
-    add_action( 'wp_enqueue_scripts',   'scaffold_register_scripts' );
-    add_action( 'wp_enqueue_scripts',   'scaffold_enqueue_scripts' );
+    add_action( 'wp_enqueue_scripts',   'scaffolder_register_scripts' );
+    add_action( 'wp_enqueue_scripts',   'scaffolder_enqueue_scripts' );
 }
-add_action( 'init', 'scaffold_styles_scripts' );
+add_action( 'init', 'scaffolder_styles_scripts' );
 
 /**
  * Register styles.
  */
-function scaffold_register_styles()
+function scaffolder_register_styles()
 {
     // Vendor
     wp_register_style( 'jquery-fancybox', SCAFFOLD_VENDOR_URL . '/fancybox/source/jquery.fancybox.css', '', '', 'screen' );
@@ -103,7 +103,7 @@ function scaffold_register_styles()
 /**
  * Enqueue styles.
  */
-function scaffold_enqueue_styles()
+function scaffolder_enqueue_styles()
 {
     wp_enqueue_style( 'jquery-fancybox' );
     wp_enqueue_style( 'jquery-bxslider' );
@@ -113,7 +113,7 @@ function scaffold_enqueue_styles()
 /**
  * Register scripts
  */
-function scaffold_register_scripts()
+function scaffolder_register_scripts()
 {
     // Vendor
     wp_register_script( 'bootstrap', SCAFFOLD_VENDOR_URL . '/bootstrap/dist/js/bootstrap.min.js', array( 'jquery' ), '', true );
@@ -129,7 +129,7 @@ function scaffold_register_scripts()
 /**
  * Enqueue scripts
  */
-function scaffold_enqueue_scripts()
+function scaffolder_enqueue_scripts()
 {
     wp_enqueue_script( 'bootstrap' );
     wp_enqueue_script( 'html5shiv' );
