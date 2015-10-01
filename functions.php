@@ -13,6 +13,11 @@ if( ! defined( 'SCAFFOLDER_BOWER_URL' ) ) {
     define( 'SCAFFOLDER_BOWER_URL', get_stylesheet_directory_uri() . '/assets/vendor/' );
 }
 
+// Build url
+if( ! defined( 'SCAFFOLDER_BUILD_URL' ) ) {
+    define( 'SCAFFOLDER_BUILD_URL', get_stylesheet_directory_uri() . '/assets/build' );
+}
+
 // Scaffold setup
 if( ! function_exists( 'scaffolder_setup' ) ) :
 /**
@@ -82,7 +87,7 @@ function scaffolder_register_styles()
     wp_register_style( 'jquery-bxslider', SCAFFOLDER_BOWER_URL . '/bxslider-4/dist/jquery.bxslider.css', '', '', 'screen' );
 
     // Theme
-    wp_register_style( 'style', get_stylesheet_directory_uri() . '/style.css', '', '', 'screen' );
+    wp_register_style( 'style', SCAFFOLDER_BUILD_URL . '/css/style.css', '', '', 'screen' );
 }
 
 /**
