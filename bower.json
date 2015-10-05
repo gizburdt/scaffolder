@@ -1,6 +1,6 @@
 {
     "name": "gizburdt/scaffolder",
-    "version": "0.3",
+    "private": "true",
     "dependencies": {
         "bootstrap-sass":       "3.*",
         "font-awesome-sass":    "4.*",
@@ -11,6 +11,5 @@
         "bxslider-4":           "4.*",
         "fitvids":              "1.*",
         "fancybox":             "2.*"
-    },
-    "private": "true"
+    }
 }
