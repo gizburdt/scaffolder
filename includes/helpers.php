@@ -97,3 +97,13 @@ function array_flatten( $array )
     }
     return $result;
 }
+
+/**
+ * Check scaffolder env
+ * @param  string  $env
+ * @return boolean
+ */
+function is_scaffolder_env( $env )
+{
+    return SCAFFOLDER_ENV == $env;
+}
