@@ -1,0 +1,13 @@
+
+// Border radius
+@mixin border-radius($radius: $border-radius-base) {
+    @include border-top-radius($radius);
+    @include border-bottom-radius($radius);
+    border-radius: $radius;
+}
+
+// Box shadow
+@mixin box-shadow($shadow) {
+    -webkit-box-shadow: $shadow;
+    box-shadow: $shadow;
+}
