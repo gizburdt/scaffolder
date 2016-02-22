@@ -152,11 +152,6 @@ function scaffolder_enqueue_scripts()
 }
 
 /**
- * Allow automatic updates
- */
-add_filter( 'automatic_updates_is_vcs_checkout', '__return_false' );
-
-/**
  * All scaffold filters
  */
 require get_template_directory() . '/includes/filters.php';
