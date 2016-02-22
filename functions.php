@@ -15,7 +15,7 @@ if( ! defined( 'SCAFFOLDER_ENV' ) ) {
 
 // Assets/vendor url
 if( ! defined( 'SCAFFOLDER_BOWER_URL' ) ) {
-    define( 'SCAFFOLDER_BOWER_URL', get_stylesheet_directory_uri() . '/assets/vendor/' );
+    define( 'SCAFFOLDER_BOWER_URL', get_stylesheet_directory_uri() . '/assets/vendor' );
 }
 
 // Build url
