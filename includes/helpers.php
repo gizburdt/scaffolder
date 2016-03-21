@@ -1,18 +1,23 @@
 <?php
 
 // Block direct access
-if( ! defined( 'ABSPATH' ) ) exit;
+if (! defined('ABSPATH')) {
+    exit;
+}
 
 /**
- * Comments nav
+ * Comments nav.
  */
 function scaffolder_comment_nav()
 {
-    if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
+    if (get_comment_pages_count() > 1 && get_option('page_comments')) : ?>
         <nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
-            <h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'scaffold' ); ?></h1>
-            <div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'scaffold' ) ); ?></div>
-            <div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'scaffold' ) ); ?></div>
+            <h1 class="screen-reader-text"><?php _e('Comment navigation', 'scaffold');
+    ?></h1>
+            <div class="nav-previous"><?php previous_comments_link(__('&larr; Older Comments', 'scaffold'));
+    ?></div>
+            <div class="nav-next"><?php next_comments_link(__('Newer Comments &rarr;', 'scaffold'));
+    ?></div>
         </nav>
     <?php endif;
 }
@@ -29,7 +34,7 @@ function scaffolder_comment_nav()
  *
  * @see array_insert_after()
  */
-function array_insert_before( $key, array &$array, $new_key, $new_value )
+function array_insert_before($key, array &$array, $new_key, $new_value)
 {
     if (array_key_exists($key, $array)) {
         $new = array();
@@ -40,6 +45,7 @@ function array_insert_before( $key, array &$array, $new_key, $new_value )
 
             $new[$k] = $value;
         }
+
         return $new;
     }
 
@@ -58,7 +64,7 @@ function array_insert_before( $key, array &$array, $new_key, $new_value )
  *
  * @see array_insert_before()
  */
-function array_insert_after( $key, array &$array, $new_key, $new_value )
+function array_insert_after($key, array &$array, $new_key, $new_value)
 {
     if (array_key_exists($key, $array)) {
         $new = array();
@@ -68,6 +74,7 @@ function array_insert_after( $key, array &$array, $new_key, $new_value )
                 $new[$new_key] = $new_value;
             }
         }
+
         return $new;
     }
 
@@ -75,35 +82,36 @@ function array_insert_after( $key, array &$array, $new_key, $new_value )
 }
 
 /**
- * Flattens a multi-dimensional array to a normal array
+ * Flattens a multi-dimensional array to a normal array.
  *
  * @param $array Multidimensional array
  *
  * @return The new array
  */
-function array_flatten( $array )
+function array_flatten($array)
 {
-    if( ! is_array( $array ) ) {
+    if (! is_array($array)) {
         return false;
     }
 
     $result = array();
-    foreach( $array as $key => $value ) {
-        if( is_array( $value ) ) {
+    foreach ($array as $key => $value) {
+        if (is_array($value)) {
             $result = array_merge($result, array_flatten($value));
         } else {
             $result[$key] = $value;
         }
     }
+
     return $result;
 }
 
 /**
- * Check scaffolder env
- * @param  string  $env
- * @return boolean
+ * Check scaffolder env.
+ * @param  string $env
+ * @return bool
  */
-function is_scaffolder_env( $env )
+function is_scaffolder_env($env)
 {
     return SCAFFOLDER_ENV == $env;
 }
