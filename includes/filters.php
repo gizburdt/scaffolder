@@ -34,6 +34,7 @@ function scaffolder_body_class($classes)
     } else {
         $classes[] = 'unknown-browser';
     }
+
     if ($is_iphone) {
         $classes[]   = 'iphone';
     }
