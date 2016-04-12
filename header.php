@@ -22,10 +22,10 @@
             <div class="navbar-header">
                 <a href="<?php echo esc_url(home_url('/')); ?>" class="navbar-brand logo"><?php bloginfo('name'); ?></a>
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#site-navigation">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
                 </button>
             </div>
             <?php wp_nav_menu(array(
