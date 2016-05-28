@@ -11,7 +11,7 @@
 
         </div>
 
-        <div class="site-sidebar widget-area">
+        <div class="sidebar widget-area">
 
             <?php get_sidebar(); ?>
 
