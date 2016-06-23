@@ -1,4 +1,4 @@
-<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<div id="post-<?php the_ID(); ?>" <?php post_class('content-inner'); ?>>
     <header class="entry-header">
         <h2 class="entry-title"><?php the_title(); ?></h2>
     </header>

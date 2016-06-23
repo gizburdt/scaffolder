@@ -1,8 +1,11 @@
+        </div>
+        <!-- /content-wrap -->
+
     </div>
     <!-- /site-content -->
 
     <footer class="site-footer">
-        <div class="footer-content">
+        <div class="footer-inner">
 
             &copy; Copyright
 
