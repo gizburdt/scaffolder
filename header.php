@@ -41,5 +41,5 @@
     <!-- .site-content -->
     <div class="site-content">
 
-        <!-- .content-wrap -->
-        <div class="content-wrap">
+        <!-- .layout -->
+        <div class="layout">

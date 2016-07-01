@@ -1,5 +1,5 @@
         </div>
-        <!-- /content-wrap -->
+        <!-- /layout -->
 
     </div>
     <!-- /site-content -->
