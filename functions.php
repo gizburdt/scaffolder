@@ -25,7 +25,7 @@ if (! defined('SCAFFOLDER_BUILD_URL')) {
     define('SCAFFOLDER_BUILD_URL', get_stylesheet_directory_uri().'/assets/build');
 }
 
-// Scaffold setup
+// Scaffolder setup
 if (! function_exists('scaffolder_setup')) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -37,8 +37,8 @@ if (! function_exists('scaffolder_setup')) :
 function scaffolder_setup()
 {
     // Textdomain
-    load_theme_textdomain('scaffold', get_template_directory().'/languages');
-    load_child_theme_textdomain('scaffold', get_stylesheet_directory().'/languages');
+    load_theme_textdomain('scaffolder', get_template_directory().'/languages');
+    load_child_theme_textdomain('scaffolder', get_stylesheet_directory().'/languages');
 
     // Theme support
     add_theme_support('menus');
@@ -53,16 +53,16 @@ function scaffolder_setup()
 
     // Menus
     register_nav_menus(array(
-        'primary-menu'      => __('Primary menu', 'scaffold'),
-        'secondary-menu'    => __('Secondary menu', 'scaffold'),
-        'footer-menu'       => __('Footer menu', 'scaffold')
+        'primary-menu'      => __('Primary menu', 'scaffolder'),
+        'secondary-menu'    => __('Secondary menu', 'scaffolder'),
+        'footer-menu'       => __('Footer menu', 'scaffolder')
     ));
 }
 endif;
 add_action('after_setup_theme', 'scaffolder_setup');
 
 /**
- * Init for Scaffold Child.
+ * Init for Scaffolder Child.
  */
 function scaffolder_child_init()
 {
@@ -155,12 +155,12 @@ function scaffolder_enqueue_scripts()
 }
 
 /**
- * All scaffold filters.
+ * All scaffolder filters.
  */
 require get_template_directory().'/includes/filters.php';
 
 /**
- * All scaffold filters for admin.
+ * All scaffolder filters for admin.
  */
 require get_template_directory().'/includes/filters-admin.php';
 
