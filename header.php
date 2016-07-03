@@ -41,5 +41,12 @@
     <!-- .site-content -->
     <div class="site-content">
 
+        <?php
+            /**
+             * scaffolder_site_content_start hook.
+             */
+            do_action('scaffolder_site_content_open');
+        ?>
+
         <!-- .layout -->
         <div class="layout">

@@ -1,6 +1,13 @@
         </div>
         <!-- /layout -->
 
+        <?php
+            /**
+             * scaffolder_site_content_end hook.
+             */
+            do_action('scaffolder_site_content_close');
+        ?>
+
     </div>
     <!-- /site-content -->
 
