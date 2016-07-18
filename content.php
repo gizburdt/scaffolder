@@ -1,6 +1,6 @@
 <div id="post-<?php the_ID(); ?>" <?php post_class('content-inner'); ?>>
 
-    <?php if(get_the_title()) : ?>
+    <?php if (get_the_title()) : ?>
 
         <header class="entry-header">
             <h2 class="entry-title"><?php the_title(); ?></h2>
