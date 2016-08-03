@@ -1,6 +1,6 @@
 <div class="sidebar widget-area">
     <div class="sidebar-inner">
-        <ul>
+        <ul class="widgets">
             <?php dynamic_sidebar('sidebar'); ?>
         </ul>
     </div>
