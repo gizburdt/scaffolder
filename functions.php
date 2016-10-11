@@ -155,6 +155,11 @@ function scaffolder_enqueue_scripts()
 }
 
 /**
+ * Scaffolder.
+ */
+require get_template_directory().'/includes/scaffolder.php';
+
+/**
  * All scaffolder filters.
  */
 require get_template_directory().'/includes/filters.php';
