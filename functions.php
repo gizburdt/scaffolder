@@ -101,6 +101,7 @@ function scaffolder_enqueue_styles()
  */
 function scaffolder_register_scripts()
 {
+    // Assets
 }
 
 /**
