@@ -1,4 +1,4 @@
-<div id="post-<?php the_ID(); ?>" <?php post_class('content-inner'); ?>>
+<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
     <?php if (get_the_title()) : ?>
 

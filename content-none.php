@@ -1,4 +1,5 @@
 <div class="content-inner no-results not-found">
+
     <header class="page-header">
         <h1 class="page-title"><?php _e('Nothing Found', 'scaffolder'); ?></h1>
     </header>
@@ -14,4 +15,5 @@
         <?php get_search_form(); ?>
 
     </div>
+
 </div>
