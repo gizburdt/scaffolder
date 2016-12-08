@@ -1,10 +1,7 @@
-<?php
-    if (post_password_required()) {
-        return;
-    }
-?>
+<?php if (post_password_required()) { return; } ?>
 
 <div id="comments" class="comments">
+
     <?php if (have_comments()) : ?>
 
         <h2 class="comments-title">
@@ -35,4 +32,5 @@
     <?php endif; ?>
 
     <?php comment_form(); ?>
+
 </div>

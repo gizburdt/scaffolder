@@ -12,11 +12,13 @@
     <!-- /site-content -->
 
     <footer class="site-footer">
+
         <div class="footer-inner">
 
             &copy; Copyright
 
         </div>
+
     </footer>
 
 </div>

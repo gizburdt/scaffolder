@@ -9,7 +9,11 @@
     <?php endif; ?>
 
     <div class="entry-summary">
+
         <?php the_excerpt(); ?>
+
         <a href="<?php the_permalink(); ?>"><?php _e('Read more', 'scaffolder') ?></a>
+
     </div>
+
 </div>

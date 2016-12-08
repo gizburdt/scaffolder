@@ -6,11 +6,9 @@
 
             <?php get_template_part('content', 'single'); ?>
 
-            <?php
-                if (comments_open() || '0' != get_comments_number()) :
-                    comments_template();
-                endif;
-            ?>
+            <?php if (comments_open() || '0' != get_comments_number()) : ?>
+                <?php comments_template(); ?>
+            <?php endif; ?>
 
         <?php endwhile; endif; ?>
 

@@ -28,6 +28,7 @@
                     <span class="icon-bar"></span>
                 </button>
             </div>
+
             <?php wp_nav_menu(array(
                 'theme_location'    => 'primary-menu',
                 'container_class'   => 'collapse navbar-collapse',
