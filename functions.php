@@ -120,6 +120,13 @@ function scaffolder_enqueue_scripts()
 require get_template_directory().'/includes/scaffolder.php';
 
 /**
+ * Template.
+ */
+// require get_template_directory().'/includes/template.php';
+
+var_dump(get_template_directory().'/includes/template.php');
+
+/**
  * All scaffolder filters.
  */
 require get_template_directory().'/includes/filters.php';
