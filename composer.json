@@ -2,6 +2,7 @@
     "name": "gizburdt/scaffolder",
     "type": "wordpress-theme",
     "description": "A framework for Wordpress themes",
+    "license": "MIT",
     "authors": [
         {
             "name": "Gijs Jorissen",
