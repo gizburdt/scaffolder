@@ -25,7 +25,7 @@ add_action('init', 'scaffolder_styles_scripts');
  */
 function scaffolder_register_styles()
 {
-    wp_register_style('style', SCAFFOLDER_BUILD_URL.'/css/style.css', '', '', 'screen');
+    //
 }
 
 /**
@@ -33,7 +33,7 @@ function scaffolder_register_styles()
  */
 function scaffolder_enqueue_styles()
 {
-    wp_enqueue_style('style');
+    //
 }
 
 /**
@@ -41,7 +41,7 @@ function scaffolder_enqueue_styles()
  */
 function scaffolder_register_scripts()
 {
-    // Assets
+    //
 }
 
 /**
