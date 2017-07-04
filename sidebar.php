@@ -1,6 +1,6 @@
-<div class="sidebar widget-area">
+<div class="sidebar">
 
-    <div class="sidebar-inner">
+    <div class="sidebar__content">
 
         <ul class="widgets">
 

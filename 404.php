@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-    <div class="content content-area">
+    <div class="content">
 
         <header class="page-header">
             <h1 class="page-title"><?php _e("Oops! That page can't be found.", 'scaffolder'); ?></h1>

@@ -1,10 +1,10 @@
 <?php get_header(); ?>
 
-    <div class="content content-area">
+    <div class="content">
 
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-            <?php get_template_part('content', get_post_format()); ?>
+            <?php get_template_part('partials/content', ! is_page() ? get_post_format() : null); ?>
 
         <?php endwhile; endif; ?>
 

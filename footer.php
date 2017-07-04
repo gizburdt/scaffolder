@@ -1,28 +1,10 @@
-        </div>
-        <!-- /layout -->
+        </div> <!-- /layout -->
 
-        <?php
-            /**
-             * scaffolder_site_content_end hook.
-             */
-            do_action('scaffolder_site_content_close');
-        ?>
+    </div> <!-- /site -->
 
-    </div>
-    <!-- /site-content -->
+    <?php get_template_part('partials/footer'); ?>
 
-    <footer class="site-footer">
-
-        <div class="footer-inner">
-
-            &copy; Copyright
-
-        </div>
-
-    </footer>
-
-</div>
-<!-- /site -->
+</div> <!-- /root -->
 
 <?php wp_footer(); ?>
 

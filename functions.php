@@ -10,11 +10,6 @@ if (! isset($content_width)) {
     $content_width = 640;
 }
 
-// Assets/vendor url
-if (! defined('SCAFFOLDER_BOWER_URL')) {
-    define('SCAFFOLDER_BOWER_URL', get_stylesheet_directory_uri().'/resources/assets/vendor');
-}
-
 // Build url
 if (! defined('SCAFFOLDER_BUILD_URL')) {
     define('SCAFFOLDER_BUILD_URL', get_stylesheet_directory_uri().'/assets');
