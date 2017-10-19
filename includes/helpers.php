@@ -108,28 +108,3 @@ function array_insert_after($key, array &$array, $new_key, $new_value)
 
     return false;
 }
-
-/**
- * Flattens a multi-dimensional array to a normal array.
- *
- * @param $array Multidimensional array
- *
- * @return The new array
- */
-function array_flatten($array)
-{
-    if (! is_array($array)) {
-        return false;
-    }
-
-    $result = array();
-    foreach ($array as $key => $value) {
-        if (is_array($value)) {
-            $result = array_merge($result, array_flatten($value));
-        } else {
-            $result[$key] = $value;
-        }
-    }
-
-    return $result;
-}
