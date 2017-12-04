@@ -1,6 +1,6 @@
 <div class="navigation">
     <div class="navigation__content">
-        <nav class="navigation__navbar navbar navbar-toggleable-md">
+        <nav class="navigation__navbar navbar navbar-toggleable-lg">
             <div class="container">
                 <button
                     class="navbar-toggler navbar-toggler-right"
