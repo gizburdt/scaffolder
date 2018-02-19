@@ -1,18 +1,12 @@
 # Crap
 .DS_Store
 *.log
-/*.zip
-/*.tar.gz
 
 # Composer
 vendor/
 
 # Node
-node_modules
-
-# Codekit
-codekit-config.json
-.codekit-cache
+node_modules/
 
 # Editors
 *.sublime-project
