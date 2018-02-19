@@ -5,14 +5,14 @@ namespace App;
 use Roots\Sage\Container;
 
 /**
- * Get the sage container.
+ * Get the scaffolder container.
  *
  * @param string $abstract
  * @param array  $parameters
  * @param Container $container
  * @return Container|mixed
  */
-function sage($abstract = null, $parameters = [], Container $container = null)
+function scaffolder($abstract = null, $parameters = [], Container $container = null)
 {
     $container = $container ?: Container::getInstance();
 
@@ -22,7 +22,7 @@ function sage($abstract = null, $parameters = [], Container $container = null)
 
     return $container->bound($abstract)
         ? $container->makeWith($abstract, $parameters)
-        : $container->makeWith("sage.{$abstract}", $parameters);
+        : $container->makeWith("scaffolder.{$abstract}", $parameters);
 }
 
 /**
@@ -39,14 +39,14 @@ function sage($abstract = null, $parameters = [], Container $container = null)
 function config($key = null, $default = null)
 {
     if (is_null($key)) {
-        return sage('config');
+        return scaffolder('config');
     }
 
     if (is_array($key)) {
-        return sage('config')->set($key);
+        return scaffolder('config')->set($key);
     }
 
-    return sage('config')->get($key, $default);
+    return scaffolder('config')->get($key, $default);
 }
 
 /**
@@ -60,7 +60,7 @@ function template($file, $data = [])
         wp_enqueue_scripts();
     }
 
-    return sage('blade')->render($file, $data);
+    return scaffolder('blade')->render($file, $data);
 }
 
 /**
@@ -71,7 +71,7 @@ function template($file, $data = [])
  */
 function template_path($file, $data = [])
 {
-    return sage('blade')->compiledPath($file, $data);
+    return scaffolder('blade')->compiledPath($file, $data);
 }
 
 /**
@@ -80,7 +80,7 @@ function template_path($file, $data = [])
  */
 function asset_path($asset)
 {
-    return sage('assets')->getUri($asset);
+    return scaffolder('assets')->getUri($asset);
 }
 
 /**
@@ -89,7 +89,7 @@ function asset_path($asset)
  */
 function filter_templates($templates)
 {
-    $paths = apply_filters('sage/filter_templates/paths', [
+    $paths = apply_filters('scaffolder/filter_templates/paths', [
         'views',
         'resources/views'
     ]);
@@ -141,7 +141,7 @@ function display_sidebar()
 {
     static $display;
 
-    isset($display) || $display = apply_filters('sage/display_sidebar', false);
+    isset($display) || $display = apply_filters('scaffolder/display_sidebar', false);
 
     return $display;
 }

@@ -9,9 +9,6 @@ return [
     |
     | This is the absolute path to your theme directory.
     |
-    | Example:
-    |   /srv/www/example.com/current/web/app/themes/sage
-    |
     */
 
     'dir' => get_theme_file_path(),
@@ -22,9 +19,6 @@ return [
     |--------------------------------------------------------------------------
     |
     | This is the web server URI to your theme directory.
-    |
-    | Example:
-    |   https://example.com/app/themes/sage
     |
     */
 

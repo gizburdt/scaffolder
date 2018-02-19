@@ -11,8 +11,8 @@ use Roots\Sage\Template\BladeProvider;
  * Theme assets
  */
 add_action('wp_enqueue_scripts', function () {
-    wp_enqueue_style('sage/main.css', asset_path('styles/main.css'), false, null);
-    wp_enqueue_script('sage/main.js', asset_path('scripts/main.js'), ['jquery'], null, true);
+    wp_enqueue_style('scaffolder/main.css', asset_path('styles/main.css'), false, null);
+    wp_enqueue_script('scaffolder/main.js', asset_path('scripts/main.js'), ['jquery'], null, true);
 }, 100);
 
 /**
@@ -97,24 +97,24 @@ add_action('widgets_init', function () {
  * Note: updated value is only available for subsequently loaded views, such as partials
  */
 add_action('the_post', function ($post) {
-    sage('blade')->share('post', $post);
+    scaffolder('blade')->share('post', $post);
 });
 
 /**
- * Setup Sage options
+ * Setup Scaffolder options
  */
 add_action('after_setup_theme', function () {
     /**
-     * Add JsonManifest to Sage container
+     * Add JsonManifest to Scaffolder container
      */
-    sage()->singleton('sage.assets', function () {
+    scaffolder()->singleton('scaffolder.assets', function () {
         return new JsonManifest(config('assets.manifest'), config('assets.uri'));
     });
 
     /**
-     * Add Blade to Sage container
+     * Add Blade to Scaffolder container
      */
-    sage()->singleton('sage.blade', function (Container $app) {
+    scaffolder()->singleton('scaffolder.blade', function (Container $app) {
         $cachePath = config('view.compiled');
 
         if (!file_exists($cachePath)) {
@@ -129,7 +129,7 @@ add_action('after_setup_theme', function () {
     /**
      * Create @asset() Blade directive
      */
-    sage('blade')->compiler()->directive('asset', function ($asset) {
+    scaffolder('blade')->compiler()->directive('asset', function ($asset) {
         return "<?= " . __NAMESPACE__ . "\\asset_path({$asset}); ?>";
     });
 });

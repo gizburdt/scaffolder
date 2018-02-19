@@ -43,6 +43,7 @@ collect([
  */
 add_filter('template_include', function ($template) {
     $data = collect(get_body_class())->reduce(function ($data, $class) use ($template) {
+        // 'sage' refers to soberwp/controller
         return apply_filters("sage/template/{$class}/data", $data, $template);
     }, []);
 
