@@ -7,16 +7,16 @@ use Roots\Sage\Container;
 /**
  * Get the scaffolder container.
  *
- * @param string $abstract
- * @param array  $parameters
- * @param Container $container
+ * @param  string          $abstract
+ * @param  array           $parameters
+ * @param  Container       $container
  * @return Container|mixed
  */
 function scaffolder($abstract = null, $parameters = [], Container $container = null)
 {
     $container = $container ?: Container::getInstance();
 
-    if (!$abstract) {
+    if (! $abstract) {
         return $container;
     }
 
@@ -30,8 +30,8 @@ function scaffolder($abstract = null, $parameters = [], Container $container = n
  *
  * If an array is passed as the key, we will assume you want to set an array of values.
  *
- * @param array|string $key
- * @param mixed $default
+ * @param  array|string             $key
+ * @param  mixed                    $default
  * @return mixed|\Roots\Sage\Config
  * @copyright Taylor Otwell
  * @link https://github.com/laravel/framework/blob/c0970285/src/Illuminate/Foundation/helpers.php#L254-L265
@@ -50,8 +50,8 @@ function config($key = null, $default = null)
 }
 
 /**
- * @param string $file
- * @param array $data
+ * @param  string $file
+ * @param  array  $data
  * @return string
  */
 function template($file, $data = [])
@@ -64,9 +64,9 @@ function template($file, $data = [])
 }
 
 /**
- * Retrieve path to a compiled blade view
+ * Retrieve path to a compiled blade view.
  * @param $file
- * @param array $data
+ * @param  array  $data
  * @return string
  */
 function template_path($file, $data = [])
@@ -84,7 +84,7 @@ function asset_path($asset)
 }
 
 /**
- * @param string|string[] $templates Possible template files
+ * @param  string|string[] $templates Possible template files
  * @return array
  */
 function filter_templates($templates)
@@ -94,7 +94,7 @@ function filter_templates($templates)
         'resources/views'
     ]);
 
-    $paths_pattern = "#^(" . implode('|', $paths) . ")/#";
+    $paths_pattern = '#^('.implode('|', $paths).')/#';
 
     return collect($templates)
         ->map(function ($template) use ($paths_pattern) {
@@ -125,8 +125,8 @@ function filter_templates($templates)
 }
 
 /**
- * @param string|string[] $templates Relative path to possible template files
- * @return string Location of the template
+ * @param  string|string[] $templates Relative path to possible template files
+ * @return string          Location of the template
  */
 function locate_template($templates)
 {
@@ -134,7 +134,7 @@ function locate_template($templates)
 }
 
 /**
- * Determine whether to show the sidebar
+ * Determine whether to show the sidebar.
  * @return bool
  */
 function display_sidebar()

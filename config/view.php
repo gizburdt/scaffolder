@@ -17,7 +17,6 @@ return [
         get_parent_theme_file_path().'/resources/views',
     ],
 
-
     /*
     |--------------------------------------------------------------------------
     | Compiled View Path
@@ -30,7 +29,6 @@ return [
     */
 
     'compiled' => wp_upload_dir()['basedir'].'/cache',
-
 
     /*
     |--------------------------------------------------------------------------
