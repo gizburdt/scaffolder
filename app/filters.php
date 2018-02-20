@@ -2,12 +2,12 @@
 
 namespace App;
 
-/**
+/*
  * Add <body> classes
  */
 add_filter('body_class', function (array $classes) {
     // Add page slug if it doesn't exist
-    if (is_single() || is_page() && !is_front_page()) {
+    if (is_single() || is_page() && ! is_front_page()) {
         if (! in_array(basename(get_permalink()), $classes)) {
             $classes[] = basename(get_permalink());
         }
@@ -21,14 +21,14 @@ add_filter('body_class', function (array $classes) {
     return array_filter($classes);
 });
 
-/**
+/*
  * Add "… Continued" to the excerpt
  */
 add_filter('excerpt_more', function () {
-    return ' &hellip; <a href="' . get_permalink() . '">' . __('Continued', 'scaffolder') . '</a>';
+    return ' &hellip; <a href="'.get_permalink().'">'.__('Continued', 'scaffolder').'</a>';
 });
 
-/**
+/*
  * Template Hierarchy should search for .blade.php files
  */
 collect([
@@ -38,7 +38,7 @@ collect([
     add_filter("{$type}_template_hierarchy", __NAMESPACE__.'\\filter_templates');
 });
 
-/**
+/*
  * Render page using Blade
  */
 add_filter('template_include', function ($template) {
@@ -56,7 +56,7 @@ add_filter('template_include', function ($template) {
     return $template;
 }, PHP_INT_MAX);
 
-/**
+/*
  * Tell WordPress how to find the compiled path of comments.blade.php
  */
 add_filter('comments_template', function ($comments_template) {
