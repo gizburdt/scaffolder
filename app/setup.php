@@ -40,9 +40,9 @@ add_action('after_setup_theme', function () {
      * @link https://developer.wordpress.org/reference/functions/register_nav_menus/
      */
     register_nav_menus(array(
-        'primary-menu'   => __('Primary menu', 'scaffolder'),
-        'secondary-menu' => __('Secondary menu', 'scaffolder'),
-        'footer-menu'    => __('Footer menu', 'scaffolder')
+        'menu-primary'   => __('Primary menu', 'scaffolder'),
+        'menu-secondary' => __('Secondary menu', 'scaffolder'),
+        'menu-footer'    => __('Footer menu', 'scaffolder')
     ));
 
     /*
