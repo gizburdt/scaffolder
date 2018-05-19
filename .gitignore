@@ -3,10 +3,10 @@
 *.log
 
 # Composer
-vendor/
+/vendor
 
 # Node
-node_modules/
+/node_modules
 
 # Editors
 *.sublime-project
