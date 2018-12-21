@@ -23,7 +23,7 @@ $scaffolder_error = function ($message, $subtitle = '', $title = '') {
 /*
  * Ensure compatible version of PHP is used
  */
-if (version_compare('7', phpversion(), '>=')) {
+if (version_compare('7.1', phpversion(), '>=')) {
     $scaffolder_error(__('You must be using PHP 7 or greater.', 'scaffolder'), __('Invalid PHP version', 'scaffolder'));
 }
 
