@@ -1,5 +1,5 @@
 <!doctype html>
-<html @php(language_attributes())>
+<html {!! get_language_attributes() !!}>
     <head>
         @include('partials.head')
     </head>
