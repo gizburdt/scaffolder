@@ -33,7 +33,7 @@ add_filter('excerpt_more', function () {
  */
 collect([
     'index', '404', 'archive', 'author', 'category', 'tag', 'taxonomy', 'date', 'home',
-    'frontpage', 'page', 'paged', 'search', 'single', 'singular', 'attachment'
+    'frontpage', 'page', 'paged', 'search', 'single', 'singular', 'attachment',
 ])->map(function ($type) {
     add_filter("{$type}_template_hierarchy", __NAMESPACE__.'\\filter_templates');
 });

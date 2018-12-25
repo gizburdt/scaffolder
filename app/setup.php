@@ -2,9 +2,9 @@
 
 namespace App;
 
-use Roots\Sage\Assets\JsonManifest;
 use Roots\Sage\Container;
 use Roots\Sage\Template\Blade;
+use Roots\Sage\Assets\JsonManifest;
 use Roots\Sage\Template\BladeProvider;
 
 /*
@@ -39,11 +39,11 @@ add_action('after_setup_theme', function () {
      * Register navigation menus
      * @link https://developer.wordpress.org/reference/functions/register_nav_menus/
      */
-    register_nav_menus(array(
+    register_nav_menus([
         'menu-primary'   => __('Primary menu', 'scaffolder'),
         'menu-secondary' => __('Secondary menu', 'scaffolder'),
-        'menu-footer'    => __('Footer menu', 'scaffolder')
-    ));
+        'menu-footer'    => __('Footer menu', 'scaffolder'),
+    ]);
 
     /*
      * Enable post thumbnails
@@ -78,17 +78,17 @@ add_action('widgets_init', function () {
         'before_widget' => '<section class="widget %1$s %2$s">',
         'after_widget'  => '</section>',
         'before_title'  => '<h3>',
-        'after_title'   => '</h3>'
+        'after_title'   => '</h3>',
     ];
 
     register_sidebar([
         'name'          => __('Primary', 'scaffolder'),
-        'id'            => 'sidebar-primary'
+        'id'            => 'sidebar-primary',
     ] + $config);
 
     register_sidebar([
         'name'          => __('Footer', 'scaffolder'),
-        'id'            => 'sidebar-footer'
+        'id'            => 'sidebar-footer',
     ] + $config);
 });
 
