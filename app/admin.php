@@ -2,7 +2,7 @@
 
 namespace App;
 
-/**
+/*
  * Add buttons to the editor
  */
 add_filter('mce_buttons', function ($buttons) {
