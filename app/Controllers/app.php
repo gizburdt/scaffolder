@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use Sober\Controller\Controller;
 
-class App extends Controller
+class app extends Controller
 {
     public function siteName()
     {

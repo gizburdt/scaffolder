@@ -13,8 +13,8 @@ use Roots\Sage\Container;
  * @param string $title
  */
 $scaffolder_error = function ($message, $subtitle = '', $title = '') {
-    $title   = $title ?: __('Scaffolder &rsaquo; Error', 'scaffolder');
-    $footer  = '<a href="https://github.com/gizburdt/scaffolder/issues">github.com/gizburdt/scaffolder</a>';
+    $title = $title ?: __('Scaffolder &rsaquo; Error', 'scaffolder');
+    $footer = '<a href="https://github.com/gizburdt/scaffolder/issues">github.com/gizburdt/scaffolder</a>';
     $message = "<h1>{$title}<br><br><small>{$subtitle}</small></h1><p>{$message}</p><p>{$footer}</p>";
 
     wp_die($message, $title);

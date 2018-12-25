@@ -91,7 +91,7 @@ function filter_templates($templates)
 {
     $paths = apply_filters('scaffolder/filter_templates/paths', [
         'views',
-        'resources/views'
+        'resources/views',
     ]);
 
     $paths_pattern = '#^('.implode('|', $paths).')/#';
