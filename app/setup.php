@@ -16,7 +16,7 @@ add_action('wp_enqueue_scripts', function () {
 }, 100);
 
 /*
- * Theme setup
+ * Theme support
  */
 add_action('after_setup_theme', function () {
     /*
@@ -34,16 +34,6 @@ add_action('after_setup_theme', function () {
      * @link https://developer.wordpress.org/reference/functions/add_theme_support/#title-tag
      */
     add_theme_support('title-tag');
-
-    /*
-     * Register navigation menus
-     * @link https://developer.wordpress.org/reference/functions/register_nav_menus/
-     */
-    register_nav_menus([
-        'menu-primary'   => __('Primary menu', 'scaffolder'),
-        'menu-secondary' => __('Secondary menu', 'scaffolder'),
-        'menu-footer'    => __('Footer menu', 'scaffolder'),
-    ]);
 
     /*
      * Enable post thumbnails
@@ -68,6 +58,27 @@ add_action('after_setup_theme', function () {
      * @see resources/assets/styles/layouts/_tinymce.scss
      */
     add_editor_style(asset_path('styles/main.css'));
+}, 20);
+
+/*
+ * Theme setup
+ */
+add_action('after_setup_theme', function () {
+    /*
+     * Register navigation menus
+     * @link https://developer.wordpress.org/reference/functions/register_nav_menus/
+     */
+    register_nav_menus([
+        'menu-primary'   => __('Primary menu', 'scaffolder'),
+        'menu-secondary' => __('Secondary menu', 'scaffolder'),
+        'menu-footer'    => __('Footer menu', 'scaffolder'),
+    ]);
+
+    /**
+     * Add image sizes.
+     * @link https://developer.wordpress.org/reference/functions/add_image_size/
+     */
+    // add_image_size('custom-size', 220, 180);
 }, 20);
 
 /*

@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html {!! get_language_attributes() !!}>
     <head>
         @include('partials.head')
@@ -10,17 +10,19 @@
 
             @include('partials.header')
 
-            <div class="site" role="document">
-                <div class="content">
-                    <main class="main">
-                        @yield('content')
-                    </main>
+            <div class="site">
+                <div class="site__container">
+                    <div class="site__content">
+                        <main class="main">
+                            @yield('content')
+                        </main>
 
-                    @if (App\display_sidebar())
-                        <aside class="sidebar">
-                            @include('partials.sidebar')
-                        </aside>
-                    @endif
+                        @if (App\display_sidebar())
+                            <aside class="sidebar">
+                                @include('partials.sidebar')
+                            </aside>
+                        @endif
+                    </div>
                 </div>
             </div>
 

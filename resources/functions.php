@@ -1,8 +1,5 @@
 <?php
 
-/**
- * Do not edit anything in this file unless you know what you're doing.
- */
 use Roots\Sage\Config;
 use Roots\Sage\Container;
 
@@ -13,11 +10,23 @@ use Roots\Sage\Container;
  * @param string $title
  */
 $scaffolder_error = function ($message, $subtitle = '', $title = '') {
-    $title = $title ?: __('Scaffolder &rsaquo; Error', 'scaffolder');
+    $title = $title ?: __('Error', 'scaffolder');
     $footer = '<a href="https://github.com/gizburdt/scaffolder/issues">github.com/gizburdt/scaffolder</a>';
     $message = "<h1>{$title}<br><br><small>{$subtitle}</small></h1><p>{$message}</p><p>{$footer}</p>";
 
     wp_die($message, $title);
+};
+
+/**
+ * Helper function to include files.
+ * @param string $file
+ */
+$scaffolder_include = function ($file) use ($scaffolder_error) {
+    $file = "../app/{$file}.php";
+
+    if (! locate_template($file, true, true)) {
+        $scaffolder_error(sprintf(__('Error locating <code>%s</code> for inclusion.', 'scaffolder'), $file), 'File not found');
+    }
 };
 
 /*
@@ -54,13 +63,12 @@ if (! class_exists('Roots\\Sage\\Container')) {
  * The mapped array determines the code library included in your theme.
  * Add or remove files to the array as needed. Supports child theme overrides.
  */
-array_map(function ($file) use ($scaffolder_error) {
-    $file = "../app/{$file}.php";
-
-    if (! locate_template($file, true, true)) {
-        $scaffolder_error(sprintf(__('Error locating <code>%s</code> for inclusion.', 'scaffolder'), $file), 'File not found');
-    }
-}, ['helpers', 'setup', 'filters', 'admin']);
+array_map($scaffolder_include, [
+    'helpers',
+    'setup',
+    'filters',
+    'admin'
+]);
 
 /*
  * Here's what's happening with these hooks:
