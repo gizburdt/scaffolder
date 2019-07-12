@@ -67,7 +67,7 @@ array_map($scaffolder_include, [
     'helpers',
     'setup',
     'filters',
-    'admin'
+    'admin',
 ]);
 
 /*
