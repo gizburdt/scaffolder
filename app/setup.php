@@ -74,10 +74,10 @@ add_action('after_setup_theme', function () {
         'menu-footer'    => __('Footer menu', 'scaffolder'),
     ]);
 
-    /**
-     * Add image sizes.
-     * @link https://developer.wordpress.org/reference/functions/add_image_size/
-     */
+/*
+ * Add image sizes.
+ * @link https://developer.wordpress.org/reference/functions/add_image_size/
+ */
     // add_image_size('custom-size', 220, 180);
 }, 20);
 
