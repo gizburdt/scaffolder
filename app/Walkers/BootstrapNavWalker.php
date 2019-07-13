@@ -7,9 +7,8 @@ namespace App\Walkers;
  * GitHub URI: https://github.com/dupkey/bs4navwalker
  * Description: A custom WordPress nav walker class for Bootstrap 4 nav menus in a custom theme using the WordPress built in menu manager.
  * License: GPL-2.0+
- * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.txt.
  */
-
 class BootstrapNavWalker extends \Walker_Nav_Menu
 {
     /**
@@ -23,7 +22,8 @@ class BootstrapNavWalker extends \Walker_Nav_Menu
      * @param int    $depth  Depth of menu item. Used for padding.
      * @param array  $args   An array of arguments. @see wp_nav_menu()
      */
-    public function start_lvl( &$output, $depth = 0, $args = array() ) {
+    public function start_lvl(&$output, $depth = 0, $args = [])
+    {
         $indent = str_repeat("\t", $depth);
         $output .= "\n$indent<div class=\"dropdown-menu\">\n";
     }
@@ -39,7 +39,8 @@ class BootstrapNavWalker extends \Walker_Nav_Menu
      * @param int    $depth  Depth of menu item. Used for padding.
      * @param array  $args   An array of arguments. @see wp_nav_menu()
      */
-    public function end_lvl( &$output, $depth = 0, $args = array() ) {
+    public function end_lvl(&$output, $depth = 0, $args = [])
+    {
         $indent = str_repeat("\t", $depth);
         $output .= "$indent</div>\n";
     }
@@ -57,11 +58,12 @@ class BootstrapNavWalker extends \Walker_Nav_Menu
      * @param array  $args   An array of arguments. @see wp_nav_menu()
      * @param int    $id     Current item ID.
      */
-    public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
-        $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
+    public function start_el(&$output, $item, $depth = 0, $args = [], $id = 0)
+    {
+        $indent = ($depth) ? str_repeat("\t", $depth) : '';
 
-        $classes = empty( $item->classes ) ? array() : (array) $item->classes;
-        $classes[] = 'menu-item-' . $item->ID;
+        $classes = empty($item->classes) ? [] : (array) $item->classes;
+        $classes[] = 'menu-item-'.$item->ID;
 
         /**
          * Filter the CSS class(es) applied to a menu item's list item element.
@@ -74,7 +76,7 @@ class BootstrapNavWalker extends \Walker_Nav_Menu
          * @param array  $args    An array of {@see wp_nav_menu()} arguments.
          * @param int    $depth   Depth of menu item. Used for padding.
          */
-        $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args, $depth ) );
+        $class_names = implode(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args, $depth));
 
         // New
         $class_names .= ' nav-item';
@@ -88,7 +90,7 @@ class BootstrapNavWalker extends \Walker_Nav_Menu
         }
         //
 
-        $class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
+        $class_names = $class_names ? ' class="'.esc_attr($class_names).'"' : '';
 
         // print_r($class_names);
 
@@ -103,22 +105,22 @@ class BootstrapNavWalker extends \Walker_Nav_Menu
          * @param array  $args    An array of {@see wp_nav_menu()} arguments.
          * @param int    $depth   Depth of menu item. Used for padding.
          */
-        $id = apply_filters( 'nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args, $depth );
-        $id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
+        $id = apply_filters('nav_menu_item_id', 'menu-item-'.$item->ID, $item, $args, $depth);
+        $id = $id ? ' id="'.esc_attr($id).'"' : '';
 
         // New
         if ($depth === 0) {
-            $output .= $indent . '<li' . $id . $class_names .'>';
+            $output .= $indent.'<li'.$id.$class_names.'>';
         }
         //
 
         // $output .= $indent . '<li' . $id . $class_names .'>';
 
-        $atts = array();
-        $atts['title']  = ! empty( $item->attr_title ) ? $item->attr_title : '';
-        $atts['target'] = ! empty( $item->target )     ? $item->target     : '';
-        $atts['rel']    = ! empty( $item->xfn )        ? $item->xfn        : '';
-        $atts['href']   = ! empty( $item->url )        ? $item->url        : '';
+        $atts = [];
+        $atts['title'] = ! empty($item->attr_title) ? $item->attr_title : '';
+        $atts['target'] = ! empty($item->target) ? $item->target : '';
+        $atts['rel'] = ! empty($item->xfn) ? $item->xfn : '';
+        $atts['href'] = ! empty($item->url) ? $item->url : '';
 
         // New
         if ($depth === 0) {
@@ -126,13 +128,13 @@ class BootstrapNavWalker extends \Walker_Nav_Menu
         }
 
         if ($depth === 0 && in_array('menu-item-has-children', $classes)) {
-            $atts['class']       .= ' dropdown-toggle';
-            $atts['data-toggle']  = 'dropdown';
+            $atts['class'] .= ' dropdown-toggle';
+            $atts['data-toggle'] = 'dropdown';
         }
 
         if ($depth > 0) {
-            $manual_class = array_values($classes)[0] .' '. 'dropdown-item';
-            $atts ['class']= $manual_class;
+            $manual_class = array_values($classes)[0].' '.'dropdown-item';
+            $atts ['class'] = $manual_class;
         }
 
         if (in_array('current-menu-item', $item->classes)) {
@@ -150,22 +152,22 @@ class BootstrapNavWalker extends \Walker_Nav_Menu
          * @param array $atts {
          *     The HTML attributes applied to the menu item's `<a>` element, empty strings are ignored.
          *
-         *     @type string $title  Title attribute.
-         *     @type string $target Target attribute.
-         *     @type string $rel    The rel attribute.
-         *     @type string $href   The href attribute.
+         *     @var string $title  Title attribute.
+         *     @var string $target Target attribute.
+         *     @var string $rel    The rel attribute.
+         *     @var string $href   The href attribute.
          * }
          * @param object $item  The current menu item.
          * @param array  $args  An array of {@see wp_nav_menu()} arguments.
          * @param int    $depth Depth of menu item. Used for padding.
          */
-        $atts = apply_filters( 'nav_menu_link_attributes', $atts, $item, $args, $depth );
+        $atts = apply_filters('nav_menu_link_attributes', $atts, $item, $args, $depth);
 
         $attributes = '';
-        foreach ( $atts as $attr => $value ) {
-            if ( ! empty( $value ) ) {
-                $value = ( 'href' === $attr ) ? esc_url( $value ) : esc_attr( $value );
-                $attributes .= ' ' . $attr . '="' . $value . '"';
+        foreach ($atts as $attr => $value) {
+            if (! empty($value)) {
+                $value = ('href' === $attr) ? esc_url($value) : esc_attr($value);
+                $attributes .= ' '.$attr.'="'.$value.'"';
             }
         }
 
@@ -181,13 +183,13 @@ class BootstrapNavWalker extends \Walker_Nav_Menu
         }
         */
         //
-        $item_output .= '<a'. $attributes .'>';
-        /** This filter is documented in wp-includes/post-template.php */
-        $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
+        $item_output .= '<a'.$attributes.'>';
+        /* This filter is documented in wp-includes/post-template.php */
+        $item_output .= $args->link_before.apply_filters('the_title', $item->title, $item->ID).$args->link_after;
         $item_output .= '</a>';
         $item_output .= $args->after;
 
-        /**
+        /*
          * Filter a menu item's starting output.
          *
          * The menu item's starting output only includes `$args->before`, the opening `<a>`,
@@ -201,7 +203,7 @@ class BootstrapNavWalker extends \Walker_Nav_Menu
          * @param int    $depth       Depth of menu item. Used for padding.
          * @param array  $args        An array of {@see wp_nav_menu()} arguments.
          */
-        $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+        $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
     }
 
     /**
@@ -216,7 +218,8 @@ class BootstrapNavWalker extends \Walker_Nav_Menu
      * @param int    $depth  Depth of page. Not Used.
      * @param array  $args   An array of arguments. @see wp_nav_menu()
      */
-    public function end_el( &$output, $item, $depth = 0, $args = array() ) {
+    public function end_el(&$output, $item, $depth = 0, $args = [])
+    {
         if ($depth === 0) {
             $output .= "</li>\n";
         }
