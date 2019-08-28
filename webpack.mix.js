@@ -1,9 +1,8 @@
-const { mix } = require('laravel-mix');
 
-mix.options({
-    publicPath: 'public/',
-});
+const mix = require('./resources/mix/build/mix');
 
-mix.js('resources/assets/js/app.js', 'js/');
+mix.js('resources/assets/js/app.js', 'js/app.js')
 
-mix.sass('resources/assets/scss/app.scss', 'css/');
+mix.sass('resources/assets/scss/app.scss', 'css/app.css')
+
+mix.sourceMaps(false);
